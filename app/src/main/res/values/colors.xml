@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="green_primary">#00A5AD</color>
+    <color name="green_500">#09989F</color>
+    <color name="green_700">#14868C</color>
+    <color name="red">#F6273F</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="BrandSecondaryMedium">#8776DE</color>
+    <color name="SupportDangerMedium">#D55757</color>
+    <color name="BrandPrimaryMedium">#39B49B</color>
+    <color name="SupportSuccessMedium">#32A56B</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="NeutralLightest">#FFFFFF</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

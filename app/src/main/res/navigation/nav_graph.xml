@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/cpfFragment">
+
+    <fragment
+        android:id="@+id/cpfFragment"
+        android:name="com.andre.inframanaus.fragments.CpfFragment"
+        android:label="fragment_cpf"
+        tools:layout="@layout/fragment_cpf" >
+        <action
+            android:id="@+id/action_cpfFragment_to_dadosPessoaisFragment"
+            app:destination="@id/dadosPessoaisFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dadosPessoaisFragment"
+        android:name="com.andre.inframanaus.fragments.DadosPessoaisFragment"
+        android:label="fragment_dados_pessoais"
+        tools:layout="@layout/fragment_dados_pessoais" >
+        <action
+            android:id="@+id/action_dadosPessoaisFragment_to_nomeCompletoFragment"
+            app:destination="@id/nomeCompletoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nomeCompletoFragment"
+        android:name="com.andre.inframanaus.fragments.NomeCompletoFragment"
+        android:label="fragment_nome_completo"
+        tools:layout="@layout/fragment_nome_completo" >
+        <action
+            android:id="@+id/action_nomeCompletoFragment_to_nomeUsuarioFragment"
+            app:destination="@id/nomeUsuarioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nomeUsuarioFragment"
+        android:name="com.andre.inframanaus.fragments.UserNameFragment"
+        android:label="fragment_nome_usuario"
+        tools:layout="@layout/fragment_nome_usuario" >
+        <action
+            android:id="@+id/action_nomeUsuarioFragment_to_telefoneFragment"
+            app:destination="@id/telefoneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/telefoneFragment"
+        android:name="com.andre.inframanaus.fragments.PhoneFragment"
+        android:label="fragment_telefone"
+        tools:layout="@layout/fragment_telefone" >
+        <action
+            android:id="@+id/action_telefoneFragment_to_cepFragment"
+            app:destination="@id/cepFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cepFragment"
+        android:name="com.andre.inframanaus.fragments.CepFragment"
+        android:label="fragment_cep"
+        tools:layout="@layout/fragment_cep" >
+        <action
+            android:id="@+id/action_cepFragment_to_emailFragment"
+            app:destination="@id/emailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emailFragment"
+        android:name="com.andre.inframanaus.fragments.EmailFragment"
+        android:label="fragment_email"
+        tools:layout="@layout/fragment_email" >
+        <action
+            android:id="@+id/action_emailFragment_to_senhaFragment"
+            app:destination="@id/senhaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/senhaFragment"
+        android:name="com.andre.inframanaus.fragments.PasswordFragment"
+        android:label="fragment_senha"
+        tools:layout="@layout/fragment_senha" >
+        <action
+            android:id="@+id/action_senhaFragment_to_termosFragment"
+            app:destination="@id/termosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/termosFragment"
+        android:name="com.andre.inframanaus.fragments.TermsFragment"
+        android:label="fragment_termos"
+        tools:layout="@layout/fragment_termos" />
+</navigation>
