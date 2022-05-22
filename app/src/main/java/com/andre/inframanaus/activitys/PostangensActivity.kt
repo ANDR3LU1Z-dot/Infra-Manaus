@@ -11,7 +11,6 @@ import com.andre.inframanaus.R
 import androidx.core.view.GravityCompat
 import androidx.navigation.ui.*
 import com.andre.inframanaus.databinding.ActivityPostangensBinding
-import kotlinx.android.synthetic.main.activity_postangens.*
 
 class PostangensActivity : AppCompatActivity() {
 
@@ -27,8 +26,8 @@ class PostangensActivity : AppCompatActivity() {
         setSupportActionBar(binding.appBarPostangens.toolbar)
 
         binding.appBarPostangens.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+                startActivity(Intent(this, MenuServicosActivity::class.java))
+
         }
 
         //Navegação

@@ -1,4 +1,4 @@
-package com.andre.inframanaus
+package com.andre.inframanaus.interfaces
 
 import com.andre.inframanaus.body.BodyCardPostagens
 

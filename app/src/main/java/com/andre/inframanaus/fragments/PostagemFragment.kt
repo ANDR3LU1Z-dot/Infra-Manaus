@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.andre.inframanaus.databinding.FragmentPostagemBinding
-import kotlinx.android.synthetic.main.fragment_postagem.*
 
 
 class PostagemFragment : Fragment() {

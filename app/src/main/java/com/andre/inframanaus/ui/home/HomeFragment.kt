@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.andre.inframanaus.CardOnClickListener
+import com.andre.inframanaus.interfaces.CardOnClickListener
 import com.andre.inframanaus.R
 import com.andre.inframanaus.adapter.CardPostagensAdapter
 import com.andre.inframanaus.body.BodyCardPostagens

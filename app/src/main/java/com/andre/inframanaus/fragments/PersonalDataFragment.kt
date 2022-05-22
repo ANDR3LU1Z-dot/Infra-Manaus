@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.andre.inframanaus.R
 import com.andre.inframanaus.databinding.FragmentDadosPessoaisBinding
-import kotlinx.android.synthetic.main.fragment_cpf.*
 
 
 class DadosPessoaisFragment : Fragment() {

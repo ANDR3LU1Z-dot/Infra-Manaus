@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.andre.inframanaus.R
 import com.andre.inframanaus.databinding.FragmentCpfBinding
-import kotlinx.android.synthetic.main.fragment_cpf.*
 
 
 class CpfFragment : Fragment() {
@@ -46,7 +45,7 @@ class CpfFragment : Fragment() {
         }
 
         btnContinue.setOnClickListener{
-            val cpffield = cpffield.text.toString()
+            val cpffield = binding.cpffield.text.toString()
 
             if(cpffield.isNullOrEmpty()){
                 Toast.makeText(requireContext(), "Preencha o campo do CPF", Toast.LENGTH_SHORT).show()
