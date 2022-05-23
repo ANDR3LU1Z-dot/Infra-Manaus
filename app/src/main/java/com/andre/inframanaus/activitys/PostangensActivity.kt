@@ -2,7 +2,6 @@ package com.andre.inframanaus.activitys
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.drawerlayout.widget.DrawerLayout
@@ -52,7 +51,7 @@ class PostangensActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_disconnect
+                R.id.nav_postagens, R.id.nav_politicas, R.id.nav_sobre, R.id.nav_disconnect
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

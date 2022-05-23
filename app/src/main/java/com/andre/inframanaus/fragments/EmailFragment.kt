@@ -40,8 +40,6 @@ class EmailFragment : Fragment() {
         btnContinue.setOnClickListener{
             if(emailfield.isNullOrEmpty()){
                 Toast.makeText(requireContext(), "Preencha o campo Email", Toast.LENGTH_SHORT).show()
-            } else {
-                findNavController().navigate(R.id.action_emailFragment_to_senhaFragment)
             }
         }
     }

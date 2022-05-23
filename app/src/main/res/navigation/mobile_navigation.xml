@@ -3,29 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_postagens">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.andre.inframanaus.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" >
+        android:id="@+id/nav_postagens"
+        android:name="com.andre.inframanaus.fragments.PostagensFragment"
+        android:label="@string/menu_postanges"
+        tools:layout="@layout/fragment_postagens" >
         <action
             android:id="@+id/action_nav_home_to_postagemFragment"
             app:destination="@id/postagemFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.andre.inframanaus.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_politicas"
+        android:name="com.andre.inframanaus.fragments.PoliticasFragment"
+        android:label="@string/menu_politicas"
+        tools:layout="@layout/fragment_politicas" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.andre.inframanaus.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_sobre"
+        android:name="com.andre.inframanaus.fragments.SobreFragment"
+        android:label="@string/menu_sobre"
+        tools:layout="@layout/fragment_sobre" />
     <fragment
         android:id="@+id/postagemFragment"
         android:name="com.andre.inframanaus.fragments.PostagemFragment"
@@ -33,6 +33,6 @@
         tools:layout="@layout/fragment_postagem" >
         <action
             android:id="@+id/action_postagemFragment_to_nav_home"
-            app:popUpTo="@id/nav_home" />
+            app:popUpTo="@id/nav_postagens" />
     </fragment>
 </navigation>

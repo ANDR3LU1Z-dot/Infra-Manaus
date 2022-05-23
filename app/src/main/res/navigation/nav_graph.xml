@@ -56,16 +56,7 @@
         android:label="fragment_cep"
         tools:layout="@layout/fragment_cep" >
         <action
-            android:id="@+id/action_cepFragment_to_emailFragment"
-            app:destination="@id/emailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/emailFragment"
-        android:name="com.andre.inframanaus.fragments.EmailFragment"
-        android:label="fragment_email"
-        tools:layout="@layout/fragment_email" >
-        <action
-            android:id="@+id/action_emailFragment_to_senhaFragment"
+            android:id="@+id/action_cepFragment_to_senhaFragment"
             app:destination="@id/senhaFragment" />
     </fragment>
     <fragment
@@ -81,5 +72,14 @@
         android:id="@+id/termosFragment"
         android:name="com.andre.inframanaus.fragments.TermsFragment"
         android:label="fragment_termos"
-        tools:layout="@layout/fragment_termos" />
+        tools:layout="@layout/fragment_termos" >
+        <action
+            android:id="@+id/action_termosFragment_to_emailFragment"
+            app:destination="@id/emailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emailFragment"
+        android:name="com.andre.inframanaus.fragments.EmailFragment"
+        android:label="fragment_email"
+        tools:layout="@layout/fragment_email" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.andre.inframanaus.ui.home
+package com.andre.inframanaus.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,11 +12,11 @@ import com.andre.inframanaus.R
 import com.andre.inframanaus.adapter.CardPostagensAdapter
 import com.andre.inframanaus.body.BodyCardPostagens
 import com.andre.inframanaus.body.cardPostagensList
-import com.andre.inframanaus.databinding.FragmentHomeBinding
+import com.andre.inframanaus.databinding.FragmentPostagensBinding
 
-class HomeFragment : Fragment(), CardOnClickListener {
+class PostagensFragment : Fragment(), CardOnClickListener {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentPostagensBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -30,7 +30,7 @@ class HomeFragment : Fragment(), CardOnClickListener {
 //        val homeViewModel =
 //            ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentPostagensBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val listView = binding.listaPostagens

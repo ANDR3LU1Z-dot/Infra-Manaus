@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".activitys.EditPostagemActivity">
 
+    <TextView
+        android:id="@+id/txt_risco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="12dp"
+        android:text="Risco: "
+        android:textSize="25sp"
+        android:textColor="@color/green_primary"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_solcitacao" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -23,9 +36,9 @@
         android:id="@+id/send_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Envie sua postagem: "
-        android:textSize="25sp"
         android:layout_marginTop="3dp"
+        android:text="Edite sua postagem: "
+        android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,21 +46,57 @@
 
     <ImageView
         android:id="@+id/imagePost"
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_width="411dp"
+        android:layout_height="281dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/send_post" />
 
+    <Spinner
+        android:id="@+id/solicitacao_spinner"
+        android:layout_width="209dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/txt_solcitacao"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Spinner
+        android:id="@+id/risco_spinner"
+        android:layout_width="209dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/txt_risco"
+        app:layout_constraintTop_toBottomOf="@+id/solicitacao_spinner" />
+
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
-        android:text="TextView"
+        android:layout_marginTop="20dp"
+        android:text="Descreva sua solicitação:"
+        android:textSize="17sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagePost" />
+
+    <TextView
+        android:id="@+id/txt_solcitacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/green_primary"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="20dp"
+        android:text="Solicitação: "
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

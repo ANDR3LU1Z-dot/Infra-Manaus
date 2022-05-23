@@ -40,7 +40,7 @@ class CepFragment : Fragment() {
             if(cepfield.isNullOrEmpty()){
                 Toast.makeText(requireContext(), "Preencha o campo do CEP", Toast.LENGTH_SHORT).show()
             } else {
-                findNavController().navigate(R.id.action_cepFragment_to_emailFragment)
+                findNavController().navigate(R.id.action_cepFragment_to_senhaFragment)
             }
         }
     }
