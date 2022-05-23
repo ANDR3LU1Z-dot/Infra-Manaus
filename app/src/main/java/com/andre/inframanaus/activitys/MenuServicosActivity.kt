@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.preference.PreferenceManager
 import android.provider.MediaStore
 import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.andre.inframanaus.R
@@ -77,55 +78,62 @@ class MenuServicosActivity : AppCompatActivity() {
 
 
                 R.drawable.ic_hole_icon -> {
-                    @Suppress("DEPRECATION")
-                    if (takePictureIntent.resolveActivity(this@MenuServicosActivity.packageManager) != null) {
-                        startActivityForResult(takePictureIntent, REQUEST_CODE)
-                    } else {
-                        Toast.makeText(
-                            this@MenuServicosActivity,
-                            "Camera desabilitada",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
+                    startActivity(Intent(this@MenuServicosActivity, EditPostagemActivity::class.java))
+//                    @Suppress("DEPRECATION")
+//                    if (takePictureIntent.resolveActivity(this@MenuServicosActivity.packageManager) != null) {
+//                        startActivityForResult(takePictureIntent, REQUEST_CODE)
+//                    } else {
+//                        Toast.makeText(
+//                            this@MenuServicosActivity,
+//                            "Camera desabilitada",
+//                            Toast.LENGTH_SHORT
+//                        ).show()
+//                    }
                 }
                 R.drawable.ic_bulb_light_icon -> {
-                    @Suppress("DEPRECATION")
-                    if (takePictureIntent.resolveActivity(this@MenuServicosActivity.packageManager) != null) {
-                        startActivityForResult(takePictureIntent, REQUEST_CODE)
-                    } else {
-                        Toast.makeText(
-                            this@MenuServicosActivity,
-                            "Camera desabilitada",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
+                    startActivity(Intent(this@MenuServicosActivity, EditPostagemActivity::class.java))
+
+//                    @Suppress("DEPRECATION")
+//                    if (takePictureIntent.resolveActivity(this@MenuServicosActivity.packageManager) != null) {
+//                        startActivityForResult(takePictureIntent, REQUEST_CODE)
+//                    } else {
+//                        Toast.makeText(
+//                            this@MenuServicosActivity,
+//                            "Camera desabilitada",
+//                            Toast.LENGTH_SHORT
+//                        ).show()
+//                    }
 
                 }
                 R.drawable.ic_faucet_icon -> {
-                    @Suppress("DEPRECATION")
-                    if (takePictureIntent.resolveActivity(this@MenuServicosActivity.packageManager) != null) {
-                        startActivityForResult(takePictureIntent, REQUEST_CODE)
-                    } else {
-                        Toast.makeText(
-                            this@MenuServicosActivity,
-                            "Camera desabilitada",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
+                    startActivity(Intent(this@MenuServicosActivity, EditPostagemActivity::class.java))
+
+//                    @Suppress("DEPRECATION")
+//                    if (takePictureIntent.resolveActivity(this@MenuServicosActivity.packageManager) != null) {
+//                        startActivityForResult(takePictureIntent, REQUEST_CODE)
+//                    } else {
+//                        Toast.makeText(
+//                            this@MenuServicosActivity,
+//                            "Camera desabilitada",
+//                            Toast.LENGTH_SHORT
+//                        ).show()
+//                    }
 
                 }
 
                 R.drawable.ic_trash -> {
-                    @Suppress("DEPRECATION")
-                    if (takePictureIntent.resolveActivity(this@MenuServicosActivity.packageManager) != null) {
-                        startActivityForResult(takePictureIntent, REQUEST_CODE)
-                    } else {
-                        Toast.makeText(
-                            this@MenuServicosActivity,
-                            "Camera desabilitada",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
+                    startActivity(Intent(this@MenuServicosActivity, EditPostagemActivity::class.java))
+
+//                    @Suppress("DEPRECATION")
+//                    if (takePictureIntent.resolveActivity(this@MenuServicosActivity.packageManager) != null) {
+//                        startActivityForResult(takePictureIntent, REQUEST_CODE)
+//                    } else {
+//                        Toast.makeText(
+//                            this@MenuServicosActivity,
+//                            "Camera desabilitada",
+//                            Toast.LENGTH_SHORT
+//                        ).show()
+//                    }
 
                 }
 
@@ -135,20 +143,17 @@ class MenuServicosActivity : AppCompatActivity() {
 
     }
 
-    @Suppress("DEPRECATION")
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?){
-        if(requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK){
-            val takenImage = data?.data!! as Bitmap
-            transaction(takenImage)
-        } else{
-            super.onActivityResult(requestCode, resultCode, data)
-        }
+//    @Suppress("DEPRECATION")
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?){
+//        if(requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK){
+//            val takenImage = data?.data!! as Bitmap
+//        } else{
+//            super.onActivityResult(requestCode, resultCode, data)
+//        }
+//
+//
+//    }
 
 
-    }
-
-    fun transaction(photo: Bitmap){
-        startActivity(Intent(this, EditPostagemActivity(photo)::class.java))
-    }
 
 }
