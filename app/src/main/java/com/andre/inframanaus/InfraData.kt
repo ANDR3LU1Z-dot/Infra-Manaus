@@ -8,11 +8,31 @@ import android.media.ExifInterface
 import android.os.Build
 import android.os.Environment
 import androidx.appcompat.app.AlertDialog
+import org.w3c.dom.Text
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.util.*
 
 object InfraData {
+
+    var base64Img: String? = ""
+    var takenImage: Bitmap? = null
+    var tipo_solicitacao: String = ""
+    var tipoRisco: String = ""
+    var comentario: String = ""
+
+    /**
+     * Método criado para envio da foto
+     * @return AlertDialogMessage
+     */
+
+    fun reduzBitmap(bmpFotoRotation: Bitmap): Bitmap? {
+        return Bitmap.createScaledBitmap(
+            bmpFotoRotation,  //                (int) (bmpFotoRotation.getWidth() * 0.1), (int) (bmpFotoRotation.getHeight() * 0.1)
+            200, 200
+            , true
+        )
+    }
 
     /**
      * Método que cria a imagem de perfil do usuário

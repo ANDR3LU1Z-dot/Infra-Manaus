@@ -49,10 +49,10 @@ class MenuServicosActivity : AppCompatActivity() {
     private fun setupMenu() {
         val menuItens = ArrayList<MenuSquareItem>()
 
-        menuItens.add(MenuSquareItem("Desperdício de água", R.drawable.ic_faucet_icon))
-        menuItens.add(MenuSquareItem("Buracos em asfalto", R.drawable.ic_hole_icon))
-        menuItens.add(MenuSquareItem("Lixo descartado na rua", R.drawable.ic_trash))
-        menuItens.add(MenuSquareItem("Iluminação Pública", R.drawable.ic_bulb_light_icon))
+        menuItens.add(MenuSquareItem("Desperdício de água", R.drawable.ic_desperdicio_agua))
+        menuItens.add(MenuSquareItem("Buracos em asfalto", R.drawable.ic_roda_presa))
+        menuItens.add(MenuSquareItem("Lixo descartado na rua", R.drawable.ic_lixo))
+        menuItens.add(MenuSquareItem("Iluminação Pública", R.drawable.ic_iluminacao_publica))
 
         viewManager = GridLayoutManager(this, 2)
         viewAdapter = MenuServicosAdapter(menuItens, this.menuSquareItemClickListener())
@@ -77,7 +77,7 @@ class MenuServicosActivity : AppCompatActivity() {
             when (item.drawable) {
 
 
-                R.drawable.ic_hole_icon -> {
+                R.drawable.ic_roda_presa -> {
                     startActivity(Intent(this@MenuServicosActivity, EditPostagemActivity::class.java))
 //                    @Suppress("DEPRECATION")
 //                    if (takePictureIntent.resolveActivity(this@MenuServicosActivity.packageManager) != null) {
@@ -90,22 +90,7 @@ class MenuServicosActivity : AppCompatActivity() {
 //                        ).show()
 //                    }
                 }
-                R.drawable.ic_bulb_light_icon -> {
-                    startActivity(Intent(this@MenuServicosActivity, EditPostagemActivity::class.java))
-
-//                    @Suppress("DEPRECATION")
-//                    if (takePictureIntent.resolveActivity(this@MenuServicosActivity.packageManager) != null) {
-//                        startActivityForResult(takePictureIntent, REQUEST_CODE)
-//                    } else {
-//                        Toast.makeText(
-//                            this@MenuServicosActivity,
-//                            "Camera desabilitada",
-//                            Toast.LENGTH_SHORT
-//                        ).show()
-//                    }
-
-                }
-                R.drawable.ic_faucet_icon -> {
+                R.drawable.ic_iluminacao_publica -> {
                     startActivity(Intent(this@MenuServicosActivity, EditPostagemActivity::class.java))
 
 //                    @Suppress("DEPRECATION")
@@ -120,8 +105,23 @@ class MenuServicosActivity : AppCompatActivity() {
 //                    }
 
                 }
+                R.drawable.ic_desperdicio_agua -> {
+                    startActivity(Intent(this@MenuServicosActivity, EditPostagemActivity::class.java))
 
-                R.drawable.ic_trash -> {
+//                    @Suppress("DEPRECATION")
+//                    if (takePictureIntent.resolveActivity(this@MenuServicosActivity.packageManager) != null) {
+//                        startActivityForResult(takePictureIntent, REQUEST_CODE)
+//                    } else {
+//                        Toast.makeText(
+//                            this@MenuServicosActivity,
+//                            "Camera desabilitada",
+//                            Toast.LENGTH_SHORT
+//                        ).show()
+//                    }
+
+                }
+
+                R.drawable.ic_lixo -> {
                     startActivity(Intent(this@MenuServicosActivity, EditPostagemActivity::class.java))
 
 //                    @Suppress("DEPRECATION")

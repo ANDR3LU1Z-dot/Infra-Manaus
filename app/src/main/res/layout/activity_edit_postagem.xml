@@ -1,38 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".activitys.EditPostagemActivity">
 
-    <TextView
-        android:id="@+id/txt_comentario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
-        android:text="Comentario: "
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_risco" />
+        <TextView
+            android:id="@+id/txt_comentario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Comentario: "
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/risco_spinner"
+            app:layout_constraintHorizontal_bias="0.518"
+            app:layout_constraintStart_toStartOf="@+id/risco_spinner"
+            app:layout_constraintTop_toBottomOf="@+id/risco_spinner" />
 
-    <TextView
-        android:id="@+id/txt_risco"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
-        android:text="Risco: "
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_solcitacao" />
+        <TextView
+            android:id="@+id/txt_risco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Risco: "
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/solicitacao_spinner"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="@+id/solicitacao_spinner"
+            app:layout_constraintTop_toBottomOf="@+id/solicitacao_spinner" />
 
-    <androidx.appcompat.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,85 +54,87 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/send_post"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:textAlignment="center"
-        android:text="Tire uma foto da denuncia: "
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
+        <TextView
+            android:id="@+id/send_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Tire uma foto da denuncia: "
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <com.google.android.material.imageview.ShapeableImageView
+        <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imagePost"
         android:layout_width="411dp"
         android:layout_height="281dp"
         android:layout_marginTop="12dp"
-        android:background="@drawable/buraco_asfalto"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/send_post" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnTirarFoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cornerRadius="25dp"
-        android:layout_marginTop="20dp"
-        android:text="Tirar foto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagePost" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTirarFoto"
+            android:layout_width="147dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="20dp"
+            android:text="Tirar foto"
+            app:cornerRadius="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imagePost" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:id="@+id/solicitacao_spinner"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/txt_solcitacao"
-        app:layout_constraintTop_toBottomOf="@+id/txt_descreva">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/solicitacao_spinner"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="84dp"
+            app:layout_constraintEnd_toEndOf="@+id/txt_solcitacao"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="@+id/txt_solcitacao"
+            app:layout_constraintTop_toBottomOf="@+id/txt_descreva">
 
-        <AutoCompleteTextView
-            android:id="@+id/autoComplete_solicitacao"
-            android:text="Buracos em asfalto"
-            android:layout_weight="1"
-            android:inputType="none"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
+                    <AutoCompleteTextView
+                        android:hint="Selecione a Denuncia"
+                        android:id="@+id/autoComplete_solicitacao"
+                        android:layout_weight="1"
+                        android:inputType="none"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/risco_spinner"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/txt_risco"
-        app:layout_constraintTop_toBottomOf="@+id/solicitacao_spinner" >
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/risco_spinner"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            app:layout_constraintEnd_toEndOf="@+id/txt_risco"
+            app:layout_constraintStart_toStartOf="@+id/txt_risco"
+            app:layout_constraintTop_toBottomOf="@+id/txt_risco">
 
-        <AutoCompleteTextView
-            android:id="@+id/autoComplete_risco"
-            android:layout_width="match_parent"
-            android:text="Médio"
-            android:layout_height="match_parent"
-            android:inputType="none"
-            android:layout_weight="1"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+            <AutoCompleteTextView
+                android:id="@+id/autoComplete_risco"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
 
-    <TextView
+                android:layout_weight="1"
+                android:inputType="none"
+                android:hint="Selecione o Risco"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
         android:id="@+id/txt_descreva"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -136,31 +147,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnTirarFoto" />
 
-    <TextView
-        android:id="@+id/txt_solcitacao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:text="Solicitação: "
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_descreva" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/confirmar_envio_postagem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cornerRadius="25dp"
-        android:layout_marginBottom="16dp"
-        android:text="Confirmar envio"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-<!--    <Spinner-->
+        <!--    <Spinner-->
 <!--        android:id="@+id/spinner_solicitacoes"-->
 <!--        android:layout_width="250dp"-->
 <!--        android:layout_height="wrap_content"-->
@@ -180,13 +167,61 @@
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
 <!--        app:layout_constraintTop_toBottomOf="@+id/spinner_solicitacoes" />-->
 
-    <EditText
-        android:layout_width="248dp"
-        android:layout_height="54dp"
+        <TextView
+            android:id="@+id/txt_solcitacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="Solicitação: "
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/txt_descreva"
+            app:layout_constraintStart_toStartOf="@+id/txt_descreva"
+            app:layout_constraintTop_toBottomOf="@+id/txt_descreva" />
 
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/risco_spinner" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/confirmar_envio_postagem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="40dp"
+            android:text="Confirmar envio"
+            app:cornerRadius="25dp"
+            app:layout_constraintEnd_toEndOf="@+id/editcomentario_layout"
+            app:layout_constraintHorizontal_bias="0.512"
+            app:layout_constraintStart_toStartOf="@+id/editcomentario_layout"
+            app:layout_constraintTop_toBottomOf="@+id/editcomentario_layout" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<!--        <EditText-->
+<!--            android:id="@+id/editText"-->
+<!--            android:layout_width="287dp"-->
+
+<!--            android:layout_height="116dp"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/txt_comentario"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/txt_comentario"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/txt_comentario" />-->
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editcomentario_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="283dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="@+id/txt_comentario"
+            app:layout_constraintStart_toStartOf="@+id/txt_comentario"
+            app:layout_constraintTop_toBottomOf="@+id/txt_comentario">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="text"
+                            />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

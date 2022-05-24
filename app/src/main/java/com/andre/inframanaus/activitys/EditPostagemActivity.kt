@@ -10,19 +10,25 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.FileProvider
 import com.andre.inframanaus.InfraData
+import com.andre.inframanaus.InfraData.reduzBitmap
 import com.andre.inframanaus.InfraData.rotateImage
+import com.andre.inframanaus.InfraData.takenImage
+import com.andre.inframanaus.InfraData.tipoRisco
+import com.andre.inframanaus.InfraData.tipo_solicitacao
 import com.andre.inframanaus.R
 import com.andre.inframanaus.databinding.ActivityEditPostagemBinding
 import kotlinx.coroutines.*
 import java.io.File
 
 class EditPostagemActivity: AppCompatActivity() {
-    var takenImage: Bitmap? = null
+
     val FILE_NAME =  "photo.jpg"
     val REQUEST_IMAGE_CAPTURE = 1
     private lateinit var photoFile: File
@@ -67,35 +73,99 @@ class EditPostagemActivity: AppCompatActivity() {
 
         val btnTakePicture = binding.btnTirarFoto
         val btnConfirmar = binding.confirmarEnvioPostagem
+//        val tipo_solicitacao = binding.autoCompleteSolicitacao
+
+
+
+
 
         btnTakePicture.setOnClickListener{
-            takePicture()
+            dispatchTakePictureIntent()
         }
 
         btnConfirmar.setOnClickListener{
+            if (photo != null && !tipo_solicitacao.isNullOrEmpty() && !tipoRisco.isNullOrEmpty()) {
+                InfraData.base64Img = InfraData.convertToBase64(reduzBitmap(this.photo!!)!!)
+//                InfraData.tipo_solicitacao = binding.
+                InfraData.tipoRisco = binding.autoCompleteRisco.text.toString()
+                InfraData.comentario = binding.editcomentarioLayout.toString()
 
+            } else {
+                Toast.makeText(this,"Preencha os campos obrigatórios", Toast.LENGTH_SHORT).show()
+            }
+//            startActivity(Intent(this,EditPostagem2::class.java))
         }
 
 //        image.setImageBitmap(photo)
 
     }
 
-    fun takePicture(){
+
+//    fun itemsolicitacaoListener(){
+//        binding.autoCompleteSolicitacao.onItemSelectedListener = object:
+//
+//            AdapterView.OnItemClickListener, AdapterView.OnItemSelectedListener {
+//            override fun onItemClick(
+//                parent: AdapterView<*>?,
+//                view: View?,
+//                position: Int,
+//                id: Long
+//            ) {
+//                TODO("Not yet implemented")
+//            }
+//
+//            override fun onItemSelected(
+//                parent: AdapterView<*>?,
+//                view: View?,
+//                position: Int,
+//                id: Long
+//            ) {
+//                binding.autoCompleteSolicitacao.text = solica
+//            }
+//
+//            override fun onNothingSelected(parent: AdapterView<*>?) {
+//                TODO("Not yet implemented")
+//            }
+//
+//        }
+//    }
+
+
+
+    /**
+     * Método criado para realizar a foto de perfil do usuário
+     */
+    private fun dispatchTakePictureIntent() {
+
         val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        photoFile = getPhotoFile(FILE_NAME)
-        val fileProvider = FileProvider.getUriForFile(this, "com.andre.inframanaus.fileprovider",photoFile)
-        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, fileProvider)
-        if(takePictureIntent.resolveActivity(this.packageManager)!= null){
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
-        } else{
-            Toast.makeText(this, "Camera  desabilitada", Toast.LENGTH_SHORT).show()
+
+        if (takePictureIntent.resolveActivity(this.packageManager) != null) {
+
+            try {
+                photoFile = InfraData.createImageFile(this)
+                if (photoFile != null) {
+                    var photoURI = FileProvider.getUriForFile(
+                        this,
+                        "com.andre.inframanaus.fileprovider",
+                        photoFile
+                    )
+
+                    takePictureIntent.putExtra(
+                        MediaStore.EXTRA_OUTPUT,
+                        photoURI
+                    )
+                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
+                }
+            } catch (ex: Exception) {
+                ex.printStackTrace()
+            }
         }
     }
 
-    private fun getPhotoFile(fileName: String): File {
-        val storageDirectory = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-        return File.createTempFile(fileName, ".jpg", storageDirectory)
-    }
+//    private fun getPhotoFile(fileName: String): File {
+//        val storageDirectory = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+//        return File.createTempFile(fileName, ".jpg", storageDirectory)
+//    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK){
@@ -111,6 +181,7 @@ class EditPostagemActivity: AppCompatActivity() {
                 photo = rotateImage(it, orientation)
             }
             takenImage = photo
+            InfraData.base64Img = InfraData.convertToBase64(reduzBitmap(this.photo!!)!!)
             binding.imagePost.setImageBitmap(photo)
         }
         super.onActivityResult(requestCode, resultCode, data)

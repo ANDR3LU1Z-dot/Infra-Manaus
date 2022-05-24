@@ -8,6 +8,7 @@ import com.andre.inframanaus.R
 import com.andre.inframanaus.body.BodyCardPostagens
 import com.andre.inframanaus.body.cardPostagensList
 import com.andre.inframanaus.databinding.CardPostagemBinding
+import com.andre.inframanaus.databinding.ItemPostagemBinding
 
 class CardPostagensAdapter(
     private val cards: List<BodyCardPostagens>, private val clicklistener:
@@ -16,7 +17,7 @@ class CardPostagensAdapter(
 
 
     class ListItemViewHolder(
-        private val binding: CardPostagemBinding,
+        private val binding: ItemPostagemBinding,
         private val clickListener: CardOnClickListener
     ) : RecyclerView.ViewHolder(binding.root) {
         var root = binding.root
@@ -25,9 +26,10 @@ class CardPostagensAdapter(
         fun bindCard(card: BodyCardPostagens) {
 //            binding.txtRisco.text = card.risco
 //            binding.txtNomeUsuario.text = card.nome
-            val txt_risco = binding.txtRisco
-            val nomeUsuario = binding.txtNomeUsuario
-            val status_img = binding.statusBuracoIndicador
+            val txt_risco = binding.tvRisco
+            val nomeUsuario = binding.nomeUsuario
+//            val status_img = binding.statusBuracoIndicador
+            val tipo_risco = binding.tvRisco
 
 //            txt_risco.text = card.risco
             nomeUsuario.text = card.nome
@@ -35,13 +37,13 @@ class CardPostagensAdapter(
 
             cardPostagensList.forEach {
                 if (card.tipoRisco == "A") {
-                    status_img.background = itemView.resources.getDrawable(R.drawable.shape_alto)
+                    tipo_risco.background = itemView.resources.getDrawable(R.drawable.shape_alto)
                     txt_risco.text = "Alto"
                 } else if (card.tipoRisco == "M") {
-                    status_img.background = itemView.resources.getDrawable(R.drawable.shape_medio)
+                    tipo_risco.background = itemView.resources.getDrawable(R.drawable.shape_medio)
                     txt_risco.text = "Medio"
                 } else if (card.tipoRisco == "B") {
-                    status_img.background = itemView.resources.getDrawable(R.drawable.shape_baixo)
+                    tipo_risco.background = itemView.resources.getDrawable(R.drawable.shape_baixo)
                     txt_risco.text = "Baixo"
                 }
             }
@@ -54,7 +56,7 @@ class CardPostagensAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListItemViewHolder {
         return ListItemViewHolder(
-            CardPostagemBinding.inflate(
+            ItemPostagemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
