@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/cpflLayout"
+        android:id="@+id/userLayout"
         android:layout_width="350dp"
         android:layout_height="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,7 +35,7 @@
         tools:hintEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/cpffield"
+            android:id="@+id/userField"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:maxLength="30"

@@ -13,4 +13,19 @@
     <string name="menu_sobre">Sobre</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="solicitacoes">
+        <item>Desperdício de água</item>
+        <item>Buracos em asfalto</item>
+        <item>Lixo descartado na rua</item>
+        <item>Iluminação Pública</item>
+
+    </string-array>
+
+    <string-array name="risco">
+        <item>Baixo</item>
+        <item>Médio</item>
+        <item>Alto</item>
+
+    </string-array>
 </resources>

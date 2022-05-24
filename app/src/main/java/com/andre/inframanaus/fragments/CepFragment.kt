@@ -35,9 +35,11 @@ class CepFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val btnContinue = binding.btnCepContinue
-        val cepfield = binding.cepfield.text.toString()
         btnContinue.setOnClickListener{
+            val cepfield = binding.cepfield.text.toString()
+
             if(cepfield.isNullOrEmpty()){
+
                 Toast.makeText(requireContext(), "Preencha o campo do CEP", Toast.LENGTH_SHORT).show()
             } else {
                 findNavController().navigate(R.id.action_cepFragment_to_senhaFragment)

@@ -34,9 +34,10 @@ class PhoneFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val btnContinue = binding.btnPhoneContinue
-        val phonefield = binding.phonefield.text.toString()
+
 
         btnContinue.setOnClickListener{
+            val phonefield = binding.phonefield.text.toString()
             if (phonefield.isNullOrEmpty()){
                 Toast.makeText(requireContext(), "Preencha o campo do Telefone", Toast.LENGTH_SHORT).show()
             } else {
