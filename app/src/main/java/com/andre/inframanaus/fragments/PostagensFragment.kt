@@ -1,5 +1,6 @@
 package com.andre.inframanaus.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.andre.inframanaus.interfaces.CardOnClickListener
 import com.andre.inframanaus.R
+import com.andre.inframanaus.activitys.DetalhesDenunciaActivity
 import com.andre.inframanaus.adapter.CardPostagensAdapter
 import com.andre.inframanaus.body.BodyCardPostagens
 import com.andre.inframanaus.body.cardPostagensList
@@ -53,62 +55,99 @@ class PostagensFragment : Fragment(), CardOnClickListener {
             val card1 = BodyCardPostagens(
                 "Alto",
                 "André",
+                "Buraco em Asfalto",
+                R.drawable.buraco,
                 "A"
+
             )
 
             val card2 = BodyCardPostagens(
-                "Baixo",
+                "Alto",
                 "Jairo",
+                "Buraco em Asfalto",
+                R.drawable.buraco2,
                 "B"
             )
 
             val card3 = BodyCardPostagens(
-                "Médio",
+                "Alto",
                 "Gabriel",
+                "Buraco em Asfalto",
+                R.drawable.buraco,
                 "M"
             )
 
             val card4 = BodyCardPostagens(
                 "Alto",
                 "Jefson",
+                "Buraco em Asfalto",
+                R.drawable.buraco,
                 "A"
             )
 
             val card5 = BodyCardPostagens(
-                "Médio",
+                "Alto",
                 "Deyse",
+                "Buraco em Asfalto",
+                R.drawable.buraco,
                 "M"
             )
 
             val card6 = BodyCardPostagens(
                 "Alto",
-                "Luna Allen Pereira",
-                "A"
+                "André",
+                "Sávio",
+                R.drawable.buraco,
+                "B"
             )
 
 
             val card7 = BodyCardPostagens(
-                "Médio",
-                "Mera Sampaio Torres",
-                "M"
+                "Alto",
+                "Afonso",
+                "Buraco em Asfalto",
+                R.drawable.buraco,
+                "A"
             )
 
             val card8 = BodyCardPostagens(
                 "Alto",
-                "Louis Helena Silva",
+                "Carlos",
+                "Buraco em Asfalto",
+                R.drawable.buraco,
                 "A"
             )
 
             val card9 = BodyCardPostagens(
-                "Baixo",
-                "Jason Todd da Silva",
-                "B"
+                "Alto",
+                "Janes",
+                "Buraco em Asfalto",
+                R.drawable.buraco,
+                "A"
             )
 
             val card10 = BodyCardPostagens(
-                "Médio",
-                "Edward Nigma",
-                "M"
+                "Alto",
+                "Edrean",
+                "Buraco em Asfalto",
+                R.drawable.buraco,
+                "A"
+            )
+
+            val card11 = BodyCardPostagens(
+                "Alto",
+                "Suellen",
+                "Buraco em Asfalto",
+                R.drawable.buraco,
+                "A"
+            )
+
+            val card12 = BodyCardPostagens(
+                "Alto",
+                "Paulo",
+                "Buraco em Asfalto",
+                R.drawable.buraco,
+                "A"
             )
 
             cardPostagensList.add(card1)
@@ -121,6 +160,7 @@ class PostagensFragment : Fragment(), CardOnClickListener {
             cardPostagensList.add(card8)
             cardPostagensList.add(card9)
             cardPostagensList.add(card10)
+            cardPostagensList.add(card11)
         }
 
 
@@ -133,7 +173,7 @@ class PostagensFragment : Fragment(), CardOnClickListener {
     }
 
     override fun onClick(cardPostagens: BodyCardPostagens) {
-        findNavController().navigate(R.id.action_nav_home_to_postagemFragment)
+        startActivity(Intent(requireContext(), DetalhesDenunciaActivity::class.java))
     }
 }
 

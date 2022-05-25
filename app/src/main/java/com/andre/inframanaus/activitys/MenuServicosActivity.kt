@@ -24,7 +24,7 @@ class MenuServicosActivity : AppCompatActivity() {
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var recyclerView: RecyclerView
 
-    private lateinit var binding: ActivityMenuServicosBinding
+    private lateinit var binding: com.andre.inframanaus.databinding.ActivityMenuServicosBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuServicosBinding.inflate(layoutInflater)

@@ -21,6 +21,7 @@ import com.andre.inframanaus.InfraData.rotateImage
 import com.andre.inframanaus.InfraData.takenImage
 import com.andre.inframanaus.R
 import com.andre.inframanaus.databinding.ActivityEditPostagemBinding
+import com.andre.inframanaus.databinding.ItemPostagemBinding
 import kotlinx.coroutines.*
 import java.io.File
 
@@ -109,19 +110,17 @@ class EditPostagemActivity: AppCompatActivity() {
 
 //        image.setImageBitmap(photo)
 
-    }
+        fun showDialog() {
+            val binding = ItemPostagemBinding.inflate(layoutInflater)
+            val alertDialog = AlertDialog.Builder(this)
+            val inflater = layoutInflater
+            val view = inflater.inflate(R.layout.dialog_cancel, null)
 
+            alertDialog.setView(view)
+            val dialog = alertDialog.create()
+            dialog.show()
 
-    fun showDialog() {
-        val alertDialog = AlertDialog.Builder(this)
-        val inflater = layoutInflater
-        val view = inflater.inflate(R.layout.dialog_cancel, null)
-
-        alertDialog.setView(view)
-        val dialog = alertDialog.create()
-        dialog.show()
-
-//        val btnConfirnar = view.btnCon
+//        val btnConfirnar = view.
 //        val btnCancelar = view.btn_cancelar_coleta
 
 //        btnConfirnar.setOnClickListener {
@@ -139,37 +138,14 @@ class EditPostagemActivity: AppCompatActivity() {
 //
 //        }
 
+        }
     }
 
 
-//    fun itemsolicitacaoListener(){
-//        binding.autoCompleteSolicitacao.onItemSelectedListener = object:
-//
-//            AdapterView.OnItemClickListener, AdapterView.OnItemSelectedListener {
-//            override fun onItemClick(
-//                parent: AdapterView<*>?,
-//                view: View?,
-//                position: Int,
-//                id: Long
-//            ) {
-//                TODO("Not yet implemented")
-//            }
-//
-//            override fun onItemSelected(
-//                parent: AdapterView<*>?,
-//                view: View?,
-//                position: Int,
-//                id: Long
-//            ) {
-//                binding.autoCompleteSolicitacao.text = solica
-//            }
-//
-//            override fun onNothingSelected(parent: AdapterView<*>?) {
-//                TODO("Not yet implemented")
-//            }
-//
-//        }
-//    }
+
+
+
+
 
         fun modalSucesso() {
             InfraData.createModal(

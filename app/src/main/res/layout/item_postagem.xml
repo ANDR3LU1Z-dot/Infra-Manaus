@@ -22,62 +22,58 @@
         android:layout_marginBottom="8dp">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageView3"
-            android:layout_width="41dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="48dp"
-            android:layout_marginBottom="10dp"
+            android:id="@+id/user"
+            android:layout_width="52dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
             android:src="@drawable/ic_person"
-            app:layout_constraintBottom_toTopOf="@id/ivPostagem"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.25" />
-
-        <ImageView
-            android:id="@+id/ivPostagem"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="72dp"
-            android:layout_marginEnd="8dp"
-            android:contentDescription="Pokemon Image"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/ivPostagem"
+            android:layout_width="367dp"
+            android:layout_height="304dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Postagem Image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDesc" />
+
         <TextView
-            android:id="@+id/tvSolicitacao"
+            android:id="@+id/tipo_denuncia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="19dp"
+            android:layout_marginStart="13dp"
+            android:text="Buraco em Asfalto"
             android:textColor="#313131"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivPostagem"
-            tools:text="Buraco em Asfalto" />
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/txt_denuncia"
+            app:layout_constraintTop_toTopOf="@+id/txt_denuncia" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="17dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvSolicitacao">
+            app:layout_constraintTop_toBottomOf="@+id/ivPostagem">
 
             <TextView
-                android:id="@+id/tvType1"
+                android:id="@+id/txtTipoRisco"
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
-                android:background="#A4ACAF"
                 android:gravity="center_horizontal"
-                android:textStyle="bold"
+                android:text="Risco: "
                 android:textAlignment="center"
                 android:textColor="#212121"
                 android:textSize="20sp"
-                tools:text="Risco" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvRisco"
@@ -89,35 +85,35 @@
                 android:gravity="center_horizontal"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textStyle="bold"
                 android:textSize="20sp"
+                android:textStyle="bold"
                 tools:text="Médio" />
         </LinearLayout>
+
 
         <TextView
             android:id="@+id/nomeUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="5dp"
             android:layout_marginBottom="17dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
             android:text="Nome Usuario"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/ivPostagem"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/user"
+            app:layout_constraintTop_toTopOf="@+id/user"
             app:layout_constraintVertical_bias="0.0" />
-
 
         <TextView
             android:id="@+id/hora"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="7dp"
+            android:layout_marginStart="8dp"
             android:text="00h00"
-            app:layout_constraintBottom_toTopOf="@+id/ivPostagem"
-            app:layout_constraintStart_toStartOf="@id/nomeUsuario"
-            app:layout_constraintTop_toBottomOf="@+id/nomeUsuario"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toTopOf="@+id/textView3" />
 
         <TextView
             android:id="@+id/data"
@@ -126,7 +122,97 @@
             android:layout_marginStart="6dp"
             android:text="24/05"
             app:layout_constraintStart_toEndOf="@+id/hora"
-            app:layout_constraintTop_toBottomOf="@id/nomeUsuario" />
+            app:layout_constraintTop_toTopOf="@+id/hora" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginTop="9dp"
+            android:text="Postado em:"
+            app:layout_constraintStart_toStartOf="@+id/nomeUsuario"
+            app:layout_constraintTop_toBottomOf="@+id/nomeUsuario" />
+
+        <TextView
+            android:id="@+id/txt_denuncia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="12dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Denuncia: "
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/user" />
+
+        <TextView
+            android:id="@+id/txtRua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Rua: "
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_denuncia"
+            app:layout_constraintTop_toBottomOf="@+id/txt_denuncia" />
+
+        <TextView
+            android:id="@+id/txtBairro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:text="Bairro: "
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txtRua"
+            app:layout_constraintTop_toBottomOf="@+id/txtRua" />
+
+        <TextView
+            android:id="@+id/rua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Rua João Pessoa"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/txtRua"
+            app:layout_constraintTop_toTopOf="@+id/txtRua" />
+
+        <TextView
+            android:id="@+id/bairro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="São Lázaro"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/txtBairro"
+            app:layout_constraintTop_toTopOf="@+id/txtBairro" />
+
+        <TextView
+            android:id="@+id/txtDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:text="Descrição: "
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txtBairro"
+            app:layout_constraintTop_toBottomOf="@+id/txtBairro" />
+
+        <TextView
+            android:id="@+id/descricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="TextView"
+            android:textSize="17sp"
+            app:layout_constraintStart_toEndOf="@+id/txtDesc"
+            app:layout_constraintTop_toTopOf="@+id/txtDesc" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

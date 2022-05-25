@@ -31,8 +31,16 @@ class CardPostagensAdapter(
 //            val status_img = binding.statusBuracoIndicador
             val tipo_risco = binding.tvRisco
 
+            val tipo_denuncia = binding.tipoDenuncia
+
+            val imgDenuncia = binding.ivPostagem
+
+            imgDenuncia.setImageResource(card.imgDenuncia)
+
+            tipo_denuncia.text = card.tipo_denuncia
+
 //            txt_risco.text = card.risco
-            nomeUsuario.text = card.nome
+            nomeUsuario.text = card.nome_usuario
 
 
             cardPostagensList.forEach {
