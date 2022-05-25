@@ -50,4 +50,13 @@
     <style name="Theme.RecapeiaManaus.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.RecapeiaManaus.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.buttonDefault" parent="">
+        <item name="android:layout_height">60dp</item>
+        <item name="android:background">@drawable/roundedbutton</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/NeutralLightest</item>
+        <item name="android:textSize">18sp</item>
+        <item name="cornerRadius">30dp</item>
+    </style>
 </resources>

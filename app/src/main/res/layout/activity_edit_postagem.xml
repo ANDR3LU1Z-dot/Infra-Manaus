@@ -22,10 +22,10 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/risco_spinner"
+            app:layout_constraintEnd_toEndOf="@+id/menu_riscos"
             app:layout_constraintHorizontal_bias="0.518"
-            app:layout_constraintStart_toStartOf="@+id/risco_spinner"
-            app:layout_constraintTop_toBottomOf="@+id/risco_spinner" />
+            app:layout_constraintStart_toStartOf="@+id/menu_riscos"
+            app:layout_constraintTop_toBottomOf="@+id/menu_riscos" />
 
         <TextView
             android:id="@+id/txt_risco"
@@ -36,10 +36,10 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/solicitacao_spinner"
+            app:layout_constraintEnd_toEndOf="@+id/menu_solicitacoes"
             app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toStartOf="@+id/solicitacao_spinner"
-            app:layout_constraintTop_toBottomOf="@+id/solicitacao_spinner" />
+            app:layout_constraintStart_toStartOf="@+id/menu_solicitacoes"
+            app:layout_constraintTop_toBottomOf="@+id/menu_solicitacoes" />
 
         <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -90,49 +90,68 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imagePost" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/solicitacao_spinner"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="84dp"
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/solicitacao_spinner"-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="84dp"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/txt_solcitacao"-->
+<!--            app:layout_constraintHorizontal_bias="0.507"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/txt_solcitacao"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/txt_descreva">-->
+
+<!--                    <AutoCompleteTextView-->
+<!--                        android:hint="Selecione a Denuncia"-->
+<!--                        android:id="@+id/autoComplete_solicitacao"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:inputType="none"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        />-->
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <Spinner
+            android:id="@+id/menu_solicitacoes"
+            android:layout_width="279dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="@+id/txt_solcitacao"
-            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="@+id/txt_solcitacao"
-            app:layout_constraintTop_toBottomOf="@+id/txt_descreva">
+            app:layout_constraintTop_toBottomOf="@+id/txt_solcitacao" />
 
-                    <AutoCompleteTextView
-                        android:hint="Selecione a Denuncia"
-                        android:id="@+id/autoComplete_solicitacao"
-                        android:layout_weight="1"
-                        android:inputType="none"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/risco_spinner"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="21dp"
-            app:layout_constraintEnd_toEndOf="@+id/txt_risco"
+        <Spinner
+            android:id="@+id/menu_riscos"
+            android:layout_width="279dp"
+            android:layout_marginTop="24dp"
+            android:layout_height="51dp"
             app:layout_constraintStart_toStartOf="@+id/txt_risco"
-            app:layout_constraintTop_toBottomOf="@+id/txt_risco">
+            app:layout_constraintEnd_toEndOf="@+id/txt_risco"
+            app:layout_constraintTop_toBottomOf="@+id/txt_risco" />
 
-            <AutoCompleteTextView
-                android:id="@+id/autoComplete_risco"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/risco_spinner"-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="21dp"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/txt_risco"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/txt_risco"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/txt_risco">-->
 
-                android:layout_weight="1"
-                android:inputType="none"
-                android:hint="Selecione o Risco"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
+<!--            <AutoCompleteTextView-->
+<!--                android:id="@+id/autoComplete_risco"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+
+<!--                android:layout_weight="1"-->
+<!--                android:inputType="none"-->
+<!--                android:hint="Selecione o Risco"-->
+<!--                />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
 
         <TextView
         android:id="@+id/txt_descreva"
@@ -214,6 +233,7 @@
             app:layout_constraintTop_toBottomOf="@+id/txt_comentario">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editcomentario_field"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:inputType="text"

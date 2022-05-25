@@ -26,7 +26,7 @@ class CardPostagensAdapter(
         fun bindCard(card: BodyCardPostagens) {
 //            binding.txtRisco.text = card.risco
 //            binding.txtNomeUsuario.text = card.nome
-            val txt_risco = binding.tvRisco
+//            val txt_risco = binding.tvRisco
             val nomeUsuario = binding.nomeUsuario
 //            val status_img = binding.statusBuracoIndicador
             val tipo_risco = binding.tvRisco
@@ -38,13 +38,13 @@ class CardPostagensAdapter(
             cardPostagensList.forEach {
                 if (card.tipoRisco == "A") {
                     tipo_risco.background = itemView.resources.getDrawable(R.drawable.shape_alto)
-                    txt_risco.text = "Alto"
+                    tipo_risco.text = "Alto"
                 } else if (card.tipoRisco == "M") {
                     tipo_risco.background = itemView.resources.getDrawable(R.drawable.shape_medio)
-                    txt_risco.text = "Medio"
+                    tipo_risco.text = "Medio"
                 } else if (card.tipoRisco == "B") {
                     tipo_risco.background = itemView.resources.getDrawable(R.drawable.shape_baixo)
-                    txt_risco.text = "Baixo"
+                    tipo_risco.text = "Baixo"
                 }
             }
 

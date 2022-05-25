@@ -22,6 +22,12 @@
 
     </string-array>
 
+    <string name="denuncia_enviada">Sua Denuncia foi Enviada</string>
+
+    <string name="subtitulo_denuncia_enviada">Agora você pode visualizar sua denuncia na tela inicial</string>
+
+    <string name="nothing"></string>
+
     <string-array name="risco">
         <item>Baixo</item>
         <item>Médio</item>

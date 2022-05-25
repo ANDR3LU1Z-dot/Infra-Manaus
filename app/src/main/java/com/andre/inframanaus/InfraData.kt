@@ -1,13 +1,19 @@
 package com.andre.inframanaus
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.media.ExifInterface
 import android.os.Build
 import android.os.Environment
+import android.view.LayoutInflater
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import com.andre.inframanaus.activitys.PostangensActivity
 import org.w3c.dom.Text
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -140,6 +146,59 @@ object InfraData {
         return BitmapFactory.decodeByteArray(data, 0, data.size)
 
     }
+
+    /**
+     *
+     * Método que cria modal padrão do aplicativo
+     * @param context Contexto
+     * @param icon Ícone
+     * @param title Título do modal
+     * @param subtitle Subtítulo do modal
+     * @param description Descrição do modal
+     * @return AlertDialog
+     *
+     * */
+    fun createModal(
+        context: Context,
+        icon: Int?,
+        title: Int?,
+        subtitle: Int?,
+        description: Int?
+    ): AlertDialog? {
+
+        val mDialogView = LayoutInflater.from(context).inflate(R.layout.dialog_modal, null)
+
+        icon?.let {
+            var modalIcon = mDialogView.findViewById<ImageView>(R.id.iconDialog)
+            modalIcon.setImageResource(it)
+        }
+
+        title?.let {
+            var modalTitle = mDialogView.findViewById<TextView>(R.id.titleDialog)
+            modalTitle.text = context.getString(it)
+        }
+
+        subtitle?.let {
+            var modalSubtitle = mDialogView.findViewById<TextView>(R.id.subtitleDialog)
+            modalSubtitle.text = context.getString(it)
+        }
+
+        description?.let {
+            var modalDescription = mDialogView.findViewById<TextView>(R.id.descriptionDialog)
+            modalDescription.text = context.getString(it)
+        }
+
+        val mBuilder = AlertDialog.Builder(context).setView(mDialogView)
+        val mAlertDialog = mBuilder.show()
+
+
+        mDialogView.findViewById<Button>(R.id.buttonOK).setOnClickListener{
+            mAlertDialog.dismiss()
+        }
+        return mAlertDialog
+    }
+
+
 
 
 }
