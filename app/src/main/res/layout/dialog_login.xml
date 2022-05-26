@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iconDialog"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/titleDialog"
+        style="@style/title_default"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Crie seu nome de usuário:"
+        android:layout_below="@id/iconDialog"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:accessibilityHeading="true"
+        android:textAlignment="center" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/userLayoutDialog"
+        android:layout_width="334dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="40dp"
+        app:endIconMode="clear_text"
+        android:layout_marginTop="50dp"
+        android:hint="Digite seu nome de usuario: "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:startIconDrawable="@drawable/ic_baseline_person_24">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/userFieldtDialog"
+        android:layout_width="match_parent"
+        android:inputType="textEmailAddress"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/white"
+
+        android:textColorHint="@color/green_primary" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonOKLogin"
+        style="@style/AppTheme.buttonDefault"
+        android:layout_width="200dp"
+        android:layout_height="59dp"
+        android:layout_below="@+id/descriptionDialog"
+        android:layout_gravity="center"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/BrandPrimaryMedium"
+        android:text="OK" />
+</LinearLayout>

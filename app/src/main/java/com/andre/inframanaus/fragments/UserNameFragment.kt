@@ -37,7 +37,13 @@ class UserNameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.toolbarUserName.setNavigationIcon(R.drawable.ic_back_button)
+        binding.toolbarUserName.setOnClickListener {
+            findNavController().navigate(R.id.action_nomeUsuarioFragment_to_nomeCompletoFragment)
+        }
+
         val btnContinue = binding.btnUserContinue
+
 
 
         btnContinue.setOnClickListener {

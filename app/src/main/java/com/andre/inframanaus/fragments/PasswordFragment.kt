@@ -36,19 +36,26 @@ class PasswordFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val btnContinuePassword = binding.btnSenhaContinue
 
+        binding.toolbarSenha.setNavigationIcon(R.drawable.ic_back_button)
+        binding.toolbarSenha.setOnClickListener {
+            findNavController().navigate(R.id.action_senhaFragment_to_cepFragment)
+        }
+
         btnContinuePassword.setOnClickListener{
             val senha = binding.senhaField.text.toString()
             val senhaConfirm = binding.comfirmSenhaField.text.toString()
 
             if(senha.isNullOrEmpty() && senhaConfirm.isNullOrEmpty()){
                 Toast.makeText(requireContext(), "Preencha os campos das senhas", Toast.LENGTH_SHORT).show()
-            }
-
-            if(senha != senhaConfirm){
+            } else if(senha != senhaConfirm){
                 Toast.makeText(requireContext(), "A senhas precisam ser iguais", Toast.LENGTH_SHORT).show()
+            } else{
+                findNavController().navigate(R.id.action_senhaFragment_to_termosFragment)
             }
 
-            findNavController().navigate(R.id.action_senhaFragment_to_termosFragment)
+
+
+
 
         }
 

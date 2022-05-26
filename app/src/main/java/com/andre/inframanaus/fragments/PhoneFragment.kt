@@ -33,6 +33,11 @@ class PhoneFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.toolbarPhoneNumber.setNavigationIcon(R.drawable.ic_back_button)
+        binding.toolbarPhoneNumber.setOnClickListener {
+            findNavController().navigate(R.id.action_telefoneFragment_to_nomeUsuarioFragment)
+        }
+
         val btnContinue = binding.btnPhoneContinue
 
 

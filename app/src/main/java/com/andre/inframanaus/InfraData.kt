@@ -20,7 +20,7 @@ import java.io.File
 import java.util.*
 
 object InfraData {
-
+    var userName: String? = ""
     var base64Img: String? = ""
     var takenImage: Bitmap? = null
     var tipo_solicitacao: String = ""

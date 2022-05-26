@@ -34,6 +34,10 @@ class CepFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.toolbarCep.setNavigationIcon(R.drawable.ic_back_button)
+        binding.toolbarCep.setOnClickListener {
+            findNavController().navigate(R.id.action_cepFragment_to_telefoneFragment)
+        }
         val btnContinue = binding.btnCepContinue
         btnContinue.setOnClickListener{
             val cepfield = binding.cepfield.text.toString()

@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_dadosPessoaisFragment_to_nomeCompletoFragment"
             app:destination="@id/nomeCompletoFragment" />
+        <action
+            android:id="@+id/action_dadosPessoaisFragment_to_cpfFragment"
+            app:destination="@id/cpfFragment" />
     </fragment>
     <fragment
         android:id="@+id/nomeCompletoFragment"
@@ -31,6 +34,9 @@
         <action
             android:id="@+id/action_nomeCompletoFragment_to_nomeUsuarioFragment"
             app:destination="@id/nomeUsuarioFragment" />
+        <action
+            android:id="@+id/action_nomeCompletoFragment_to_dadosPessoaisFragment"
+            app:destination="@id/dadosPessoaisFragment" />
     </fragment>
     <fragment
         android:id="@+id/nomeUsuarioFragment"
@@ -40,6 +46,9 @@
         <action
             android:id="@+id/action_nomeUsuarioFragment_to_telefoneFragment"
             app:destination="@id/telefoneFragment" />
+        <action
+            android:id="@+id/action_nomeUsuarioFragment_to_nomeCompletoFragment"
+            app:destination="@id/nomeCompletoFragment" />
     </fragment>
     <fragment
         android:id="@+id/telefoneFragment"
@@ -49,6 +58,9 @@
         <action
             android:id="@+id/action_telefoneFragment_to_cepFragment"
             app:destination="@id/cepFragment" />
+        <action
+            android:id="@+id/action_telefoneFragment_to_nomeUsuarioFragment"
+            app:destination="@id/nomeUsuarioFragment" />
     </fragment>
     <fragment
         android:id="@+id/cepFragment"
@@ -58,6 +70,9 @@
         <action
             android:id="@+id/action_cepFragment_to_senhaFragment"
             app:destination="@id/senhaFragment" />
+        <action
+            android:id="@+id/action_cepFragment_to_telefoneFragment"
+            app:destination="@id/telefoneFragment" />
     </fragment>
     <fragment
         android:id="@+id/senhaFragment"
@@ -67,6 +82,9 @@
         <action
             android:id="@+id/action_senhaFragment_to_termosFragment"
             app:destination="@id/termosFragment" />
+        <action
+            android:id="@+id/action_senhaFragment_to_cepFragment"
+            app:destination="@id/cepFragment" />
     </fragment>
     <fragment
         android:id="@+id/termosFragment"
@@ -76,10 +94,17 @@
         <action
             android:id="@+id/action_termosFragment_to_emailFragment"
             app:destination="@id/emailFragment" />
+        <action
+            android:id="@+id/action_termosFragment_to_senhaFragment"
+            app:destination="@id/senhaFragment" />
     </fragment>
     <fragment
         android:id="@+id/emailFragment"
         android:name="com.andre.inframanaus.fragments.EmailFragment"
         android:label="fragment_email"
-        tools:layout="@layout/fragment_email" />
+        tools:layout="@layout/fragment_email" >
+        <action
+            android:id="@+id/action_emailFragment_to_termosFragment"
+            app:destination="@id/termosFragment" />
+    </fragment>
 </navigation>

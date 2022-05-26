@@ -8,18 +8,26 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_dados_pessoais"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="283dp"
         android:layout_height="53dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="144dp"
         android:text="Agora precisamos dos seus dados pessoais"
         android:textAlignment="center"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_dados_pessoais" />
 
     <TextView
         android:layout_width="378dp"

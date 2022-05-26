@@ -35,6 +35,11 @@ class DadosPessoaisFragment : Fragment() {
 
         val btnContinue = binding.btnDadosContinue
 
+        binding.toolbarDadosPessoais.setNavigationIcon(R.drawable.ic_back_button)
+        binding.toolbarDadosPessoais.setOnClickListener {
+            findNavController().navigate(R.id.action_dadosPessoaisFragment_to_cpfFragment)
+        }
+
         btnContinue.setOnClickListener{
             findNavController().navigate(R.id.action_dadosPessoaisFragment_to_nomeCompletoFragment)
         }

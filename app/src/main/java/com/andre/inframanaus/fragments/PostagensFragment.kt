@@ -1,23 +1,29 @@
 package com.andre.inframanaus.fragments
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.andre.inframanaus.InfraData
 import com.andre.inframanaus.interfaces.CardOnClickListener
 import com.andre.inframanaus.R
 import com.andre.inframanaus.activitys.DetalhesDenunciaActivity
 import com.andre.inframanaus.adapter.CardPostagensAdapter
 import com.andre.inframanaus.body.BodyCardPostagens
 import com.andre.inframanaus.body.cardPostagensList
+import com.andre.inframanaus.databinding.DialogLoadBinding
 import com.andre.inframanaus.databinding.FragmentPostagensBinding
+import kotlinx.android.synthetic.main.dialog_login.view.*
 
 class PostagensFragment : Fragment(), CardOnClickListener {
 
+    lateinit var bindingDialogLogin : DialogLoadBinding
     private var _binding: FragmentPostagensBinding? = null
 
     // This property is only valid between onCreateView and
@@ -32,6 +38,7 @@ class PostagensFragment : Fragment(), CardOnClickListener {
 //        val homeViewModel =
 //            ViewModelProvider(this).get(HomeViewModel::class.java)
 
+        bindingDialogLogin = DialogLoadBinding.inflate(inflater, container, false)
         _binding = FragmentPostagensBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
@@ -166,6 +173,9 @@ class PostagensFragment : Fragment(), CardOnClickListener {
 
         populateCards()
         }
+
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

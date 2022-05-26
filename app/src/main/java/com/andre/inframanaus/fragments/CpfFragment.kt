@@ -1,5 +1,6 @@
 package com.andre.inframanaus.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.andre.inframanaus.R
+import com.andre.inframanaus.activitys.LoginActivity
 import com.andre.inframanaus.databinding.FragmentCpfBinding
 
 
@@ -41,7 +43,7 @@ class CpfFragment : Fragment() {
 
         toolbar.setNavigationIcon(R.drawable.ic_back_button)
         toolbar.setOnClickListener{
-
+            startActivity(Intent(requireContext(), LoginActivity::class.java))
         }
 
         btnContinue.setOnClickListener{

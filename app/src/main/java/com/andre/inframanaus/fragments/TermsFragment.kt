@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.andre.inframanaus.R
 import com.andre.inframanaus.databinding.FragmentTermosBinding
@@ -31,12 +32,20 @@ class TermsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        binding.toolbarTermos.setNavigationIcon(R.drawable.ic_back_button)
+        binding.toolbarTermos.setOnClickListener {
+            findNavController().navigate(R.id.action_termosFragment_to_senhaFragment)
+        }
         val btnContinueTermos = binding.btnTermos
 
 
         btnContinueTermos.setOnClickListener{
-            findNavController().navigate(R.id.action_termosFragment_to_emailFragment)
+            if(binding.checkTermos.isChecked){
+                findNavController().navigate(R.id.action_termosFragment_to_emailFragment)
+            } else{
+                Toast.makeText(requireContext(), "É necessário aceitar os termos de uso", Toast.LENGTH_SHORT).show()
+            }
+
         }
     }
 

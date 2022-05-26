@@ -11,6 +11,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
@@ -92,8 +93,8 @@ class EditPostagemActivity: AppCompatActivity() {
 
 //            Toast.makeText(this, solicitacoes[menuSolicitacoes.selectedItemPosition], Toast.LENGTH_LONG).show()
             if (photo != null) {
-                InfraData.base64Img = InfraData.convertToBase64(reduzBitmap(this.photo!!)!!)
-
+                InfraData.base64Img = InfraData.convertToBase64(this.photo!!)
+                Log.i("base64", InfraData.base64Img.toString())
                 InfraData.tipo_solicitacao = solicitacoes[menuSolicitacoes.selectedItemPosition]
                 InfraData.tipoRisco = riscos[menuRiscos.selectedItemPosition]
                 InfraData.comentario = binding.editcomentarioField.text.toString()
@@ -154,7 +155,9 @@ class EditPostagemActivity: AppCompatActivity() {
                 R.string.denuncia_enviada,
                 R.string.subtitulo_denuncia_enviada,
                 R.string.nothing,
-            )
+            )!!.setOnDismissListener{
+                startActivity(Intent(this, PostangensActivity::class.java))
+            }
 
         }
 
@@ -207,7 +210,8 @@ class EditPostagemActivity: AppCompatActivity() {
                     photo = rotateImage(it, orientation)
                 }
                 takenImage = photo
-                InfraData.base64Img = InfraData.convertToBase64(reduzBitmap(this.photo!!)!!)
+                InfraData.base64Img = InfraData.convertToBase64(this.photo!!)
+
                 binding.imagePost.setImageBitmap(photo)
             }
             super.onActivityResult(requestCode, resultCode, data)

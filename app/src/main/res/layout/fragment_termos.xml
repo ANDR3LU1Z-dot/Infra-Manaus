@@ -30,37 +30,30 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar_termos" />
 
 
-    <RadioGroup
-        android:id="@+id/radiogroup"
+    <CheckBox
+        android:id="@+id/check_termos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="140dp"
+        android:text="Aceito os Termos de Uso e Política de Privacidade"
+
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_termos">
+        app:layout_constraintTop_toBottomOf="@+id/txt_termos" />
 
-                <RadioButton
-                    android:id="@+id/termosRB"
-                    android:text="Aceito os Termos de Uso e Política de Privacidade"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
+    <CheckBox
+        android:id="@+id/check_Notificacoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
-                    />
-
-                <RadioButton
-                    android:id="@+id/notificacoesRB"
-                    android:text="Aceito receber as notificações em meu e-mail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-
-                    />
-
-    </RadioGroup>
-
+        android:text="Aceito receber as notificações em meu e-mail"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/check_termos" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_termos"

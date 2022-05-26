@@ -35,6 +35,11 @@ class NomeCompletoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.toolbarFullName.setNavigationIcon(R.drawable.ic_back_button)
+        binding.toolbarFullName.setOnClickListener{
+            findNavController().navigate(R.id.action_nomeCompletoFragment_to_dadosPessoaisFragment)
+        }
+
         val btnContinue = binding.btnFullnameContinue
 
 

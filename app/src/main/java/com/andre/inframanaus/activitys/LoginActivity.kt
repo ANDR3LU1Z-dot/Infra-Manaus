@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.andre.inframanaus.R
 import com.andre.inframanaus.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -24,12 +25,19 @@ class LoginActivity : AppCompatActivity() {
             val senha = binding.passwordfield.text.toString()
 
             if(email != "" && senha != ""){
-                startActivity(Intent(this, PostangensActivity::class.java))
-                finish()
+                if(email == "inframanaus@gmail.com" && senha == "infra123"){
+                    startActivity(Intent(this, UserQuestionActivity::class.java))
+                    finish()
+
+                } else{
+                   Toast.makeText(this, "E-mail ou senha incorretos", Toast.LENGTH_SHORT).show()
+                }
             } else {
 //                Toast.makeText(this, "Informe seu nome!", Toast.LENGTH_SHORT).show()
                 Toast.makeText(this, "Preencha os campos de email e senha", Toast.LENGTH_SHORT).show()
             }
+
+
         }
 
         val forgotPassword = binding.forgotPassword
