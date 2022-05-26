@@ -35,12 +35,12 @@ class CardPostagensAdapter(
 
             val imgDenuncia = binding.ivPostagem
 
-            imgDenuncia.setImageResource(card.imgDenuncia)
+//            imgDenuncia.setImageResource(card.imgDenuncia)
 
             tipo_denuncia.text = card.tipo_denuncia
 
 //            txt_risco.text = card.risco
-            nomeUsuario.text = card.nome_usuario
+            nomeUsuario.text = card.username
 
 
             cardPostagensList.forEach {

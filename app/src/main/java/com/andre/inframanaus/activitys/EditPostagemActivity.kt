@@ -21,6 +21,9 @@ import com.andre.inframanaus.InfraData.reduzBitmap
 import com.andre.inframanaus.InfraData.rotateImage
 import com.andre.inframanaus.InfraData.takenImage
 import com.andre.inframanaus.R
+import com.andre.inframanaus.activitys.requisicoes.ApiRetrofit
+import com.andre.inframanaus.activitys.requisicoes.InfraNetwork
+import com.andre.inframanaus.body.BodyCardPostagens
 import com.andre.inframanaus.databinding.ActivityEditPostagemBinding
 import com.andre.inframanaus.databinding.ItemPostagemBinding
 import kotlinx.coroutines.*
@@ -53,12 +56,16 @@ class EditPostagemActivity: AppCompatActivity() {
 
         }
 
+        val api by lazy {
+            ApiRetrofit(this)
+        }
+
 
         val toolbar = binding.toolbar
 
         toolbar.setNavigationIcon(R.drawable.ic_back_button)
         toolbar.setOnClickListener {
-            startActivity(Intent(this, PostangensActivity::class.java))
+            startActivity(Intent(this, MenuServicosActivity::class.java))
         }
 
         val image = binding.imagePost
@@ -97,7 +104,37 @@ class EditPostagemActivity: AppCompatActivity() {
                 Log.i("base64", InfraData.base64Img.toString())
                 InfraData.tipo_solicitacao = solicitacoes[menuSolicitacoes.selectedItemPosition]
                 InfraData.tipoRisco = riscos[menuRiscos.selectedItemPosition]
+                if(InfraData.tipoRisco == "Baixo"){
+                    InfraData.letraRisco = "B"
+                } else if(InfraData.tipoRisco == "Médio"){
+                    InfraData.letraRisco = "M"
+                } else{
+                    InfraData.letraRisco = "A"
+                }
                 InfraData.comentario = binding.editcomentarioField.text.toString()
+
+
+                InfraNetwork.cadastrarDenuncia(api, BodyCardPostagens(InfraData.tipoRisco, InfraData.userName,InfraData.tipo_solicitacao, InfraData.letraRisco,"1", InfraData.comentario,InfraData.base64Img)){
+                    try {
+                        if(it.tipoDenuncia != ""){
+                            this.runOnUiThread{
+                                InfraData.createModal(
+                                    this,
+                                    R.drawable.ic_check,
+                                    R.string.denuncia_enviada,
+                                    R.string.subtitulo_denuncia_enviada,
+                                    R.string.nothing,
+                                )!!.setOnDismissListener{
+                                    startActivity(Intent(this, PostangensActivity::class.java))
+                                    finish()
+                                }
+                            }
+                        }
+
+                    } catch (e:java.lang.Exception){
+                        Toast.makeText(this, "Algo inesperado ocorreu", Toast.LENGTH_LONG).show()
+                    }
+                }
                 modalSucesso()
 
             } else {
@@ -157,6 +194,7 @@ class EditPostagemActivity: AppCompatActivity() {
                 R.string.nothing,
             )!!.setOnDismissListener{
                 startActivity(Intent(this, PostangensActivity::class.java))
+                finish()
             }
 
         }

@@ -14,6 +14,8 @@ import com.andre.inframanaus.InfraData
 import com.andre.inframanaus.interfaces.CardOnClickListener
 import com.andre.inframanaus.R
 import com.andre.inframanaus.activitys.DetalhesDenunciaActivity
+import com.andre.inframanaus.activitys.requisicoes.ApiRetrofit
+import com.andre.inframanaus.activitys.requisicoes.InfraNetwork
 import com.andre.inframanaus.adapter.CardPostagensAdapter
 import com.andre.inframanaus.body.BodyCardPostagens
 import com.andre.inframanaus.body.cardPostagensList
@@ -38,6 +40,7 @@ class PostagensFragment : Fragment(), CardOnClickListener {
 //        val homeViewModel =
 //            ViewModelProvider(this).get(HomeViewModel::class.java)
 
+
         bindingDialogLogin = DialogLoadBinding.inflate(inflater, container, false)
         _binding = FragmentPostagensBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -57,123 +60,127 @@ class PostagensFragment : Fragment(), CardOnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        fun populateCards(){
-            val card1 = BodyCardPostagens(
-                "Alto",
-                "André",
-                "Buraco em Asfalto",
-                R.drawable.buraco,
-                "A"
-
-            )
-
-            val card2 = BodyCardPostagens(
-                "Alto",
-                "Jairo",
-                "Buraco em Asfalto",
-                R.drawable.buraco2,
-                "B"
-            )
-
-            val card3 = BodyCardPostagens(
-                "Alto",
-                "Gabriel",
-                "Buraco em Asfalto",
-                R.drawable.buraco,
-                "M"
-            )
-
-            val card4 = BodyCardPostagens(
-                "Alto",
-                "Jefson",
-                "Buraco em Asfalto",
-                R.drawable.buraco,
-                "A"
-            )
-
-            val card5 = BodyCardPostagens(
-                "Alto",
-                "Deyse",
-                "Buraco em Asfalto",
-                R.drawable.buraco,
-                "M"
-            )
-
-            val card6 = BodyCardPostagens(
-                "Alto",
-                "André",
-                "Sávio",
-                R.drawable.buraco,
-                "B"
-            )
-
-
-            val card7 = BodyCardPostagens(
-                "Alto",
-                "Afonso",
-                "Buraco em Asfalto",
-                R.drawable.buraco,
-                "A"
-            )
-
-            val card8 = BodyCardPostagens(
-                "Alto",
-                "Carlos",
-                "Buraco em Asfalto",
-                R.drawable.buraco,
-                "A"
-            )
-
-            val card9 = BodyCardPostagens(
-                "Alto",
-                "Janes",
-                "Buraco em Asfalto",
-                R.drawable.buraco,
-                "A"
-            )
-
-            val card10 = BodyCardPostagens(
-                "Alto",
-                "Edrean",
-                "Buraco em Asfalto",
-                R.drawable.buraco,
-                "A"
-            )
-
-            val card11 = BodyCardPostagens(
-                "Alto",
-                "Suellen",
-                "Buraco em Asfalto",
-                R.drawable.buraco,
-                "A"
-            )
-
-            val card12 = BodyCardPostagens(
-                "Alto",
-                "Paulo",
-                "Buraco em Asfalto",
-                R.drawable.buraco,
-                "A"
-            )
-
-            cardPostagensList.add(card1)
-            cardPostagensList.add(card2)
-            cardPostagensList.add(card3)
-            cardPostagensList.add(card4)
-            cardPostagensList.add(card5)
-            cardPostagensList.add(card6)
-            cardPostagensList.add(card7)
-            cardPostagensList.add(card8)
-            cardPostagensList.add(card9)
-            cardPostagensList.add(card10)
-            cardPostagensList.add(card11)
+        val api by lazy {
+            ApiRetrofit(requireContext())
         }
+        val denuncias = InfraNetwork.listarDenuncias(api)
 
-
-        populateCards()
+//        fun populateCards(){
+//            val card1 = BodyCardPostagens(
+//                "Alto",
+//                "André",
+//                "Buraco em Asfalto",
+//                R.drawable.buraco,
+//                "A"
+//
+//            )
+//
+//            val card2 = BodyCardPostagens(
+//                "Alto",
+//                "Jairo",
+//                "Buraco em Asfalto",
+//                R.drawable.buraco2,
+//                "B"
+//            )
+//
+//            val card3 = BodyCardPostagens(
+//                "Alto",
+//                "Gabriel",
+//                "Buraco em Asfalto",
+//                R.drawable.buraco,
+//                "M"
+//            )
+//
+//            val card4 = BodyCardPostagens(
+//                "Alto",
+//                "Jefson",
+//                "Buraco em Asfalto",
+//                R.drawable.buraco,
+//                "A"
+//            )
+//
+//            val card5 = BodyCardPostagens(
+//                "Alto",
+//                "Deyse",
+//                "Buraco em Asfalto",
+//                R.drawable.buraco,
+//                "M"
+//            )
+//
+//            val card6 = BodyCardPostagens(
+//                "Alto",
+//                "André",
+//                "Sávio",
+//                R.drawable.buraco,
+//                "B"
+//            )
+//
+//
+//            val card7 = BodyCardPostagens(
+//                "Alto",
+//                "Afonso",
+//                "Buraco em Asfalto",
+//                R.drawable.buraco,
+//                "A"
+//            )
+//
+//            val card8 = BodyCardPostagens(
+//                "Alto",
+//                "Carlos",
+//                "Buraco em Asfalto",
+//                R.drawable.buraco,
+//                "A"
+//            )
+//
+//            val card9 = BodyCardPostagens(
+//                "Alto",
+//                "Janes",
+//                "Buraco em Asfalto",
+//                R.drawable.buraco,
+//                "A"
+//            )
+//
+//            val card10 = BodyCardPostagens(
+//                "Alto",
+//                "Edrean",
+//                "Buraco em Asfalto",
+//                R.drawable.buraco,
+//                "A"
+//            )
+//
+//            val card11 = BodyCardPostagens(
+//                "Alto",
+//                "Suellen",
+//                "Buraco em Asfalto",
+//                R.drawable.buraco,
+//                "A"
+//            )
+//
+//            val card12 = BodyCardPostagens(
+//                "Alto",
+//                "Paulo",
+//                "Buraco em Asfalto",
+//                R.drawable.buraco,
+//                "A"
+//            )
+//
+//            cardPostagensList.add(card1)
+//            cardPostagensList.add(card2)
+//            cardPostagensList.add(card3)
+//            cardPostagensList.add(card4)
+//            cardPostagensList.add(card5)
+//            cardPostagensList.add(card6)
+//            cardPostagensList.add(card7)
+//            cardPostagensList.add(card8)
+//            cardPostagensList.add(card9)
+//            cardPostagensList.add(card10)
+//            cardPostagensList.add(card11)
+//        }
+//
+//
+//        populateCards()
         }
-
+//
 
 
 
