@@ -66,8 +66,8 @@ class PostangensActivity : AppCompatActivity() {
                     startActivity(Intent(this, LoginActivity::class.java))
                     finish()
             } else{
-                NavigationUI.onNavDestinationSelected(it, navController);
-                drawerLayout.closeDrawer(GravityCompat.START);
+                NavigationUI.onNavDestinationSelected(it, navController)
+                drawerLayout.closeDrawer(GravityCompat.START)
             }
             true
         }
@@ -75,11 +75,6 @@ class PostangensActivity : AppCompatActivity() {
     }
 
 
-//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        menuInflater.inflate(R.menu.postangens, menu)
-//        return true
-//    }
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_postangens)

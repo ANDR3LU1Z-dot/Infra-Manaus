@@ -18,7 +18,7 @@ fun cadastrarDenuncia(api: ApiRetrofit, body: BodyCardPostagens, callbackRetorno
             call: Call<ResponseCadastroDenuncia>,
             response: Response<ResponseCadastroDenuncia>
         ) {
-            Log.i("Sucesso", "Denuncia cadastrada")
+            Log.i("Sucesso", "$response")
             //Invocando o response da requisicao no callback
             response.body()?.let {
                 (callbackRetorno.invoke(it)) }

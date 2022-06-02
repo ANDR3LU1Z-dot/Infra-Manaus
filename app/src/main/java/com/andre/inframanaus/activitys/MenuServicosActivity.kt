@@ -41,6 +41,7 @@ class MenuServicosActivity : AppCompatActivity() {
         toolbar.setNavigationIcon(R.drawable.ic_back_button)
         toolbar.setOnClickListener {
             startActivity(Intent(this, PostangensActivity::class.java))
+            finish()
         }
         setupMenu()
     }

@@ -5,62 +5,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.andre.inframanaus.interfaces.CardOnClickListener
 import com.andre.inframanaus.R
-import com.andre.inframanaus.body.BodyCardPostagens
-import com.andre.inframanaus.body.cardPostagensList
-import com.andre.inframanaus.databinding.CardPostagemBinding
+import com.andre.inframanaus.body.*
 import com.andre.inframanaus.databinding.ItemPostagemBinding
 
-class CardPostagensAdapter(
-    private val cards: List<BodyCardPostagens>, private val clicklistener:
+class DenunciasAdapter(
+    private val cards: List<MockupDenuncias>, private val clicklistener:
     CardOnClickListener
-) : RecyclerView.Adapter<CardPostagensAdapter.ListItemViewHolder>() {
+) : RecyclerView.Adapter<DenunciasAdapter.ListItemViewHolder>() {
 
 
-    class ListItemViewHolder(
-        private val binding: ItemPostagemBinding,
-        private val clickListener: CardOnClickListener
-    ) : RecyclerView.ViewHolder(binding.root) {
-        var root = binding.root
 
-
-        fun bindCard(card: BodyCardPostagens) {
-//            binding.txtRisco.text = card.risco
-//            binding.txtNomeUsuario.text = card.nome
-//            val txt_risco = binding.tvRisco
-            val nomeUsuario = binding.nomeUsuario
-//            val status_img = binding.statusBuracoIndicador
-            val tipo_risco = binding.tvRisco
-
-            val tipo_denuncia = binding.tipoDenuncia
-
-            val imgDenuncia = binding.ivPostagem
-
-//            imgDenuncia.setImageResource(card.imgDenuncia)
-
-            tipo_denuncia.text = card.tipo_denuncia
-
-//            txt_risco.text = card.risco
-            nomeUsuario.text = card.username
-
-
-            cardPostagensList.forEach {
-                if (card.tipoRisco == "A") {
-                    tipo_risco.background = itemView.resources.getDrawable(R.drawable.shape_alto)
-                    tipo_risco.text = "Alto"
-                } else if (card.tipoRisco == "M") {
-                    tipo_risco.background = itemView.resources.getDrawable(R.drawable.shape_medio)
-                    tipo_risco.text = "Medio"
-                } else if (card.tipoRisco == "B") {
-                    tipo_risco.background = itemView.resources.getDrawable(R.drawable.shape_baixo)
-                    tipo_risco.text = "Baixo"
-                }
-            }
-
-            binding.idCardPostagem.setOnClickListener {
-                clickListener.onClick(card)
-            }
-        }
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListItemViewHolder {
         return ListItemViewHolder(
@@ -77,6 +31,52 @@ class CardPostagensAdapter(
     }
 
     override fun getItemCount(): Int = cards.size
+
+    class ListItemViewHolder(
+        private val binding: ItemPostagemBinding,
+        private val clickListener: CardOnClickListener
+    ) : RecyclerView.ViewHolder(binding.root) {
+        var root = binding.root
+
+
+        fun bindCard(card: MockupDenuncias) {
+
+            val nomeUsuario = binding.nomeUsuario
+//            val status_img = binding.statusBuracoIndicador
+            val tipo_risco = binding.tvRisco
+
+            val tipo_denuncia = binding.tipoDenuncia
+
+            val imgDenuncia = binding.ivPostagem
+
+//            val desc = binding.descricao
+
+//            desc.text =  card.
+
+            imgDenuncia.setImageResource(card.imgDenuncia)
+
+            nomeUsuario.text = card.username
+
+
+
+            cardPostagensList.forEach {
+                if (card.tipoRisco == "A") {
+                    tipo_risco.background = itemView.resources.getDrawable(R.drawable.shape_alto)
+                    tipo_risco.text = "Alto"
+                } else if (card.tipoRisco == "M") {
+                    tipo_risco.background = itemView.resources.getDrawable(R.drawable.shape_medio)
+                    tipo_risco.text = "Medio"
+                } else if (card.tipoRisco == "B") {
+                    tipo_risco.background = itemView.resources.getDrawable(R.drawable.shape_baixo)
+                    tipo_risco.text = "Baixo"
+                }
+            }
+
+            binding.idCardPostagem.setOnClickListener {
+//                clickListener.onClick(card)
+            }
+        }
+    }
 }
 
 

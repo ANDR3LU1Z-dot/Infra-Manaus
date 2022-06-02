@@ -7,7 +7,6 @@
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/drawable/headerbackground.xml" value="0.2645" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/drawable/ic_back_button.xml" value="0.2595" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/drawable/ic_check.xml" value="0.2125" />
-        <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/drawable/ic_letter.xml" value="0.244" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/drawable/ic_trash.xml" value="0.242" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/drawable/roundedbutton.xml" value="0.2125" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/drawable/shape_alto.xml" value="0.2125" />
@@ -15,37 +14,25 @@
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/drawable/shape_medio.xml" value="0.2125" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/activity_detalhes_denuncia.xml" value="0.32563405797101447" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/activity_edit_postagem.xml" value="0.21" />
-        <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/activity_forgot_password.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/activity_login.xml" value="0.17844202898550723" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/activity_main.xml" value="0.32563405797101447" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/activity_menu_servicos.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/activity_postangens.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/activity_sign_up.xml" value="0.32563405797101447" />
-        <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/activity_user_question.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/app_bar_postangens.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/card_postagem.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/content_postangens.xml" value="0.3489583333333333" />
-        <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/dialog_cadastro_realizado.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/dialog_cancel.xml" value="0.32563405797101447" />
-        <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/dialog_load.xml" value="0.32563405797101447" />
-        <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/dialog_login.xml" value="0.32563405797101447" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/dialog_modal.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/dialog_postagem_realizada.xml" value="0.32563405797101447" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/dropdown_item.xml" value="0.33" />
-        <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/fragment_cep.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/fragment_cpf.xml" value="0.19610507246376813" />
-        <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/fragment_dados_pessoais.xml" value="0.3489583333333333" />
-        <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/fragment_email.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/fragment_home.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/fragment_menu__servicos_.xml" value="0.3489583333333333" />
-        <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/fragment_nome_completo.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/fragment_nome_usuario.xml" value="0.1703125" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/fragment_postagem.xml" value="0.32563405797101447" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/fragment_postagens.xml" value="0.1703125" />
-        <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/fragment_senha.xml" value="0.3489583333333333" />
-        <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/fragment_telefone.xml" value="0.3489583333333333" />
-        <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/fragment_termos.xml" value="0.25" />
-        <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/fragment_user_question.xml" value="0.3489583333333333" />
+        <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/fragment_termos.xml" value="0.1703125" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/item_menu_square.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/item_postagem.xml" value="0.33" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/layout/modal_cancel.xml" value="0.33" />
@@ -53,6 +40,11 @@
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/menu/activity_main_drawer.xml" value="0.3489583333333333" />
         <entry key="..\:/Users/Darko/AndroidStudioProjects/InfraManaus/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.242" />
         <entry key="..\:/Users/Darko/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_dropdown_item.xml" value="0.32563405797101447" />
+        <entry key="..\:/Users/andre.silva/AndroidStudioProjects/Infra Manaus/Infra-Manaus/app/src/main/res/layout/activity_edit_postagem.xml" value="0.20153985507246377" />
+        <entry key="..\:/Users/andre.silva/AndroidStudioProjects/Infra Manaus/Infra-Manaus/app/src/main/res/layout/card_postagem.xml" value="0.12364130434782608" />
+        <entry key="..\:/Users/andre.silva/AndroidStudioProjects/Infra Manaus/Infra-Manaus/app/src/main/res/layout/fragment_postagens.xml" value="0.2" />
+        <entry key="..\:/Users/andre.silva/AndroidStudioProjects/Infra Manaus/Infra-Manaus/app/src/main/res/layout/item_postagem.xml" value="0.25" />
+        <entry key="..\:/Users/andre.silva/AndroidStudioProjects/Infra Manaus/Infra-Manaus/app/src/main/res/layout/nav_header_postangens.xml" value="0.1" />
       </map>
     </option>
   </component>

@@ -1,27 +1,23 @@
 package com.andre.inframanaus.fragments
 
-import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.andre.inframanaus.InfraData
-import com.andre.inframanaus.interfaces.CardOnClickListener
 import com.andre.inframanaus.R
+import com.andre.inframanaus.interfaces.CardOnClickListener
 import com.andre.inframanaus.activitys.DetalhesDenunciaActivity
 import com.andre.inframanaus.activitys.requisicoes.ApiRetrofit
 import com.andre.inframanaus.activitys.requisicoes.InfraNetwork
-import com.andre.inframanaus.adapter.CardPostagensAdapter
+import com.andre.inframanaus.adapter.DenunciasAdapter
 import com.andre.inframanaus.body.BodyCardPostagens
+import com.andre.inframanaus.body.MockupDenuncias
 import com.andre.inframanaus.body.cardPostagensList
 import com.andre.inframanaus.databinding.DialogLoadBinding
 import com.andre.inframanaus.databinding.FragmentPostagensBinding
-import kotlinx.android.synthetic.main.dialog_login.view.*
 
 class PostagensFragment : Fragment(), CardOnClickListener {
 
@@ -49,7 +45,7 @@ class PostagensFragment : Fragment(), CardOnClickListener {
 
         listView.layoutManager = LinearLayoutManager(requireContext())
 
-        listView.adapter = CardPostagensAdapter(cardPostagensList, this)
+        listView.adapter = DenunciasAdapter(cardPostagensList, this)
 
 //        val textView: TextView = binding.textHome
 //        homeViewModel.text.observe(viewLifecycleOwner) {
@@ -65,122 +61,71 @@ class PostagensFragment : Fragment(), CardOnClickListener {
         }
         val denuncias = InfraNetwork.listarDenuncias(api)
 
-//        fun populateCards(){
-//            val card1 = BodyCardPostagens(
-//                "Alto",
-//                "André",
-//                "Buraco em Asfalto",
-//                R.drawable.buraco,
-//                "A"
-//
-//            )
-//
-//            val card2 = BodyCardPostagens(
-//                "Alto",
-//                "Jairo",
-//                "Buraco em Asfalto",
-//                R.drawable.buraco2,
-//                "B"
-//            )
-//
-//            val card3 = BodyCardPostagens(
-//                "Alto",
-//                "Gabriel",
-//                "Buraco em Asfalto",
-//                R.drawable.buraco,
-//                "M"
-//            )
-//
-//            val card4 = BodyCardPostagens(
-//                "Alto",
-//                "Jefson",
-//                "Buraco em Asfalto",
-//                R.drawable.buraco,
-//                "A"
-//            )
-//
-//            val card5 = BodyCardPostagens(
-//                "Alto",
-//                "Deyse",
-//                "Buraco em Asfalto",
-//                R.drawable.buraco,
-//                "M"
-//            )
-//
-//            val card6 = BodyCardPostagens(
-//                "Alto",
-//                "André",
-//                "Sávio",
-//                R.drawable.buraco,
-//                "B"
-//            )
-//
-//
-//            val card7 = BodyCardPostagens(
-//                "Alto",
-//                "Afonso",
-//                "Buraco em Asfalto",
-//                R.drawable.buraco,
-//                "A"
-//            )
-//
-//            val card8 = BodyCardPostagens(
-//                "Alto",
-//                "Carlos",
-//                "Buraco em Asfalto",
-//                R.drawable.buraco,
-//                "A"
-//            )
-//
-//            val card9 = BodyCardPostagens(
-//                "Alto",
-//                "Janes",
-//                "Buraco em Asfalto",
-//                R.drawable.buraco,
-//                "A"
-//            )
-//
-//            val card10 = BodyCardPostagens(
-//                "Alto",
-//                "Edrean",
-//                "Buraco em Asfalto",
-//                R.drawable.buraco,
-//                "A"
-//            )
-//
-//            val card11 = BodyCardPostagens(
-//                "Alto",
-//                "Suellen",
-//                "Buraco em Asfalto",
-//                R.drawable.buraco,
-//                "A"
-//            )
-//
-//            val card12 = BodyCardPostagens(
-//                "Alto",
-//                "Paulo",
-//                "Buraco em Asfalto",
-//                R.drawable.buraco,
-//                "A"
-//            )
-//
-//            cardPostagensList.add(card1)
-//            cardPostagensList.add(card2)
-//            cardPostagensList.add(card3)
-//            cardPostagensList.add(card4)
-//            cardPostagensList.add(card5)
-//            cardPostagensList.add(card6)
-//            cardPostagensList.add(card7)
-//            cardPostagensList.add(card8)
-//            cardPostagensList.add(card9)
-//            cardPostagensList.add(card10)
-//            cardPostagensList.add(card11)
-//        }
-//
-//
-//        populateCards()
+        fun populateCards(){
+            val card1 = MockupDenuncias(
+                "Alto",
+                "André",
+                "Buraco em Asfalto",
+                "A",
+                R.drawable.buraco
+
+
+                )
+
+            val card2 = MockupDenuncias(
+                "Alto",
+                "Jairo",
+                "Buraco em Asfalto",
+                "B",
+                R.drawable.buraco2,
+
+                )
+
+            val card3 = MockupDenuncias(
+                "Alto",
+                "Gabriel",
+                "Buraco em Asfalto",
+                "B",
+                R.drawable.buraco_baixo,
+
+                )
+
+            val card4 = MockupDenuncias(
+                "Alto",
+                "Jefson",
+                "Buraco em Asfalto",
+                "A",
+                R.drawable.cratera_asfalto,
+
+                )
+
+            val card5 = MockupDenuncias(
+                "Alto",
+                "Deyse",
+                "Buraco em Asfalto",
+                "A" ,
+                R.drawable.cratera_2
+
+            )
+
+
+
+
+
+
+
+            cardPostagensList.add(card1)
+            cardPostagensList.add(card2)
+            cardPostagensList.add(card3)
+            cardPostagensList.add(card4)
+            cardPostagensList.add(card5)
+
         }
-//
+
+
+        populateCards()
+        }
+
 
 
 

@@ -2,7 +2,7 @@ package com.andre.inframanaus.body
 
 import android.widget.ImageView
 
-val cardPostagensList = mutableListOf<BodyCardPostagens>()
+val cardPostagensList = mutableListOf<MockupDenuncias>()
 
 data class BodyCardPostagens(
 
@@ -10,8 +10,8 @@ data class BodyCardPostagens(
     var username: String?,
     var tipo_denuncia: String?,
     var tipoRisco: String?,
-    val id: String?,
-    val comentario: String?,
     var imgDenuncia: String?,
+    var comentario: String?,
+    var base64: String?
 
 )

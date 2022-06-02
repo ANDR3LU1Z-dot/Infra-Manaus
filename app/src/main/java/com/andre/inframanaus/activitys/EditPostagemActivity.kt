@@ -29,7 +29,7 @@ import com.andre.inframanaus.databinding.ItemPostagemBinding
 import kotlinx.coroutines.*
 import java.io.File
 
-class EditPostagemActivity: AppCompatActivity() {
+class EditPostagemActivity : AppCompatActivity() {
 
     val FILE_NAME = "photo.jpg"
     val REQUEST_IMAGE_CAPTURE = 1
@@ -66,6 +66,7 @@ class EditPostagemActivity: AppCompatActivity() {
         toolbar.setNavigationIcon(R.drawable.ic_back_button)
         toolbar.setOnClickListener {
             startActivity(Intent(this, MenuServicosActivity::class.java))
+
         }
 
         val image = binding.imagePost
@@ -104,34 +105,45 @@ class EditPostagemActivity: AppCompatActivity() {
                 Log.i("base64", InfraData.base64Img.toString())
                 InfraData.tipo_solicitacao = solicitacoes[menuSolicitacoes.selectedItemPosition]
                 InfraData.tipoRisco = riscos[menuRiscos.selectedItemPosition]
-                if(InfraData.tipoRisco == "Baixo"){
+                if (InfraData.tipoRisco == "Baixo") {
                     InfraData.letraRisco = "B"
-                } else if(InfraData.tipoRisco == "Médio"){
+                } else if (InfraData.tipoRisco == "Médio") {
                     InfraData.letraRisco = "M"
-                } else{
+                } else {
                     InfraData.letraRisco = "A"
                 }
                 InfraData.comentario = binding.editcomentarioField.text.toString()
 
 
-                InfraNetwork.cadastrarDenuncia(api, BodyCardPostagens(InfraData.tipoRisco, InfraData.userName,InfraData.tipo_solicitacao, InfraData.letraRisco,"1", InfraData.comentario,InfraData.base64Img)){
+                InfraNetwork.cadastrarDenuncia(
+                    api,
+                    BodyCardPostagens(
+                        InfraData.tipoRisco,
+                        InfraData.userName,
+                        InfraData.tipo_solicitacao,
+                        InfraData.letraRisco,
+                        "1",
+                        InfraData.comentario,
+                        InfraData.base64Img
+                    )
+                ) {
                     try {
-                        if(it.tipoDenuncia != ""){
-                            this.runOnUiThread{
+                        if (it.tipoDenuncia != "") {
+                            this.runOnUiThread {
                                 InfraData.createModal(
                                     this,
                                     R.drawable.ic_check,
                                     R.string.denuncia_enviada,
                                     R.string.subtitulo_denuncia_enviada,
                                     R.string.nothing,
-                                )!!.setOnDismissListener{
+                                )!!.setOnDismissListener {
                                     startActivity(Intent(this, PostangensActivity::class.java))
-                                    finish()
+
                                 }
                             }
                         }
 
-                    } catch (e:java.lang.Exception){
+                    } catch (e: java.lang.Exception) {
                         Toast.makeText(this, "Algo inesperado ocorreu", Toast.LENGTH_LONG).show()
                     }
                 }
@@ -180,80 +192,75 @@ class EditPostagemActivity: AppCompatActivity() {
     }
 
 
-
-
-
-
-
-        fun modalSucesso() {
-            InfraData.createModal(
-                this,
-                R.drawable.ic_check,
-                R.string.denuncia_enviada,
-                R.string.subtitulo_denuncia_enviada,
-                R.string.nothing,
-            )!!.setOnDismissListener{
-                startActivity(Intent(this, PostangensActivity::class.java))
-                finish()
-            }
-
+    fun modalSucesso() {
+        InfraData.createModal(
+            this,
+            R.drawable.ic_check,
+            R.string.denuncia_enviada,
+            R.string.subtitulo_denuncia_enviada,
+            R.string.nothing,
+        )!!.setOnDismissListener {
+            startActivity(Intent(this, PostangensActivity::class.java))
+            finish()
         }
 
-        /**
-         * Método criado para realizar a foto de perfil do usuário
-         */
-        private fun dispatchTakePictureIntent() {
+    }
 
-            val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+    /**
+     * Método criado para realizar a foto de perfil do usuário
+     */
+    private fun dispatchTakePictureIntent() {
 
-            if (takePictureIntent.resolveActivity(this.packageManager) != null) {
+        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
 
-                try {
-                    photoFile = InfraData.createImageFile(this)
-                    if (photoFile != null) {
-                        var photoURI = FileProvider.getUriForFile(
-                            this,
-                            "com.andre.inframanaus.fileprovider",
-                            photoFile
-                        )
+        if (takePictureIntent.resolveActivity(this.packageManager) != null) {
 
-                        takePictureIntent.putExtra(
-                            MediaStore.EXTRA_OUTPUT,
-                            photoURI
-                        )
-                        startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
-                    }
-                } catch (ex: Exception) {
-                    ex.printStackTrace()
+            try {
+                photoFile = InfraData.createImageFile(this)
+                if (photoFile != null) {
+                    var photoURI = FileProvider.getUriForFile(
+                        this,
+                        "com.andre.inframanaus.fileprovider",
+                        photoFile
+                    )
+
+                    takePictureIntent.putExtra(
+                        MediaStore.EXTRA_OUTPUT,
+                        photoURI
+                    )
+                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)
                 }
+            } catch (ex: Exception) {
+                ex.printStackTrace()
             }
         }
+    }
 
 //    private fun getPhotoFile(fileName: String): File {
 //        val storageDirectory = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
 //        return File.createTempFile(fileName, ".jpg", storageDirectory)
 //    }
 
-        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-            if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
-                val uri = Uri.fromFile(photoFile)
-                photo = BitmapFactory.decodeFile(uri.path)
-                val exif = ExifInterface(uri.path!!)
-                val orientation =
-                    exif.getAttributeInt(
-                        ExifInterface.TAG_ORIENTATION,
-                        ExifInterface.ORIENTATION_UNDEFINED
-                    )
-                photo?.let {
-                    photo = rotateImage(it, orientation)
-                }
-                takenImage = photo
-                InfraData.base64Img = InfraData.convertToBase64(this.photo!!)
-
-                binding.imagePost.setImageBitmap(photo)
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
+            val uri = Uri.fromFile(photoFile)
+            photo = BitmapFactory.decodeFile(uri.path)
+            val exif = ExifInterface(uri.path!!)
+            val orientation =
+                exif.getAttributeInt(
+                    ExifInterface.TAG_ORIENTATION,
+                    ExifInterface.ORIENTATION_UNDEFINED
+                )
+            photo?.let {
+                photo = rotateImage(it, orientation)
             }
-            super.onActivityResult(requestCode, resultCode, data)
+            takenImage = photo
+            InfraData.base64Img = InfraData.convertToBase64(this.photo!!)
+
+            binding.imagePost.setImageBitmap(photo)
         }
-
-
+        super.onActivityResult(requestCode, resultCode, data)
     }
+
+
+}

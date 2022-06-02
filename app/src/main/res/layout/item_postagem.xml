@@ -8,6 +8,7 @@
     android:layout_marginStart="16dp"
     android:id="@+id/idCardPostagem"
     android:layout_marginLeft="16dp"
+    android:elevation="30dp"
     android:layout_marginTop="16dp"
     android:layout_marginEnd="16dp"
     android:layout_marginRight="16dp"
@@ -42,7 +43,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDesc" />
+            app:layout_constraintTop_toBottomOf="@+id/bairro" />
 
         <TextView
             android:id="@+id/tipo_denuncia"
@@ -192,27 +193,27 @@
             app:layout_constraintStart_toEndOf="@+id/txtBairro"
             app:layout_constraintTop_toTopOf="@+id/txtBairro" />
 
-        <TextView
-            android:id="@+id/txtDesc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            android:text="Descrição: "
-            android:textColor="@color/black"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/txtBairro"
-            app:layout_constraintTop_toBottomOf="@+id/txtBairro" />
+<!--        <TextView-->
+<!--            android:id="@+id/txtDesc"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="13dp"-->
+<!--            android:text="Descrição: "-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="17sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/txtBairro"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/txtBairro" />-->
 
-        <TextView
-            android:id="@+id/descricao"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="TextView"
-            android:textSize="17sp"
-            app:layout_constraintStart_toEndOf="@+id/txtDesc"
-            app:layout_constraintTop_toTopOf="@+id/txtDesc" />
+<!--        <TextView-->
+<!--            android:id="@+id/descricao"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="8dp"-->
+<!--            android:text="TextView"-->
+<!--            android:textSize="17sp"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/txtDesc"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/txtDesc" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
